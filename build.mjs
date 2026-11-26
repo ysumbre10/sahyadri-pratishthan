@@ -8,8 +8,8 @@ await mkdir(out,{recursive:true});
 // Only explicitly selected public assets enter the deployable site.
 await rm(new URL('assets/',out),{recursive:true,force:true});
 await mkdir(new URL('assets/',out),{recursive:true});
-for(const name of ['raigad.webp','lohagad.webp','film.webp','sp_logo_reg_no.webp','document-pages','projects','heritage']) await cp(new URL(`assets/${name}`,import.meta.url),new URL(`assets/${name}`,out),{recursive:true});
-for(const file of ['styles.css','app.js','projects.css','projects.js','heritage.css','media.js']) await cp(new URL(file,import.meta.url),new URL(file,out));
+for(const name of ['id-card-template-v2.png','raigad.webp','lohagad.webp','film.webp','sp_logo_reg_no.webp','document-pages','projects','heritage']) await cp(new URL(`assets/${name}`,import.meta.url),new URL(`assets/${name}`,out),{recursive:true});
+for(const file of ['styles.css','app.js','projects.css','projects.js','heritage.css','media.js','registration.css','id-card.js']) await cp(new URL(file,import.meta.url),new URL(file,out));
 const urls=[];
 for(const [lang,t] of Object.entries(content)){
  const fragments=sections(lang,t);fragments.overview=()=>overview(lang);

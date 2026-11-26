@@ -27,7 +27,7 @@ for(const lang of Object.keys(content))for(const {slug} of pageDefinitions){
   assert.equal((html.match(/data-photo data-caption/g)||[]).length,photoCount,`${route}: all unique photographs`);
  }
  if(slug==='documents')assert.equal((html.match(/class="document-page"/g)||[]).length,documents.reduce((n,d)=>n+d.pages.length,0));
- assert(!/\b(?:href|src)="[^\"]*\.pdf(?:[?#"])|\sdownload(?:[\s=>])/i.test(html),`${route}: no PDF/download links`);
+ assert(!/\b(?:href|src)="[^\"]*\.pdf(?:[?#"])|<[^>]+\sdownload(?:[\s=>])/i.test(html),`${route}: no PDF/download links`);
 }
 for(const [route,html] of routes){
  const ids=[...html.matchAll(/\bid="([^"]+)"/g)].map(m=>m[1]);assert.equal(new Set(ids).size,ids.length,`${route}: unique IDs`);

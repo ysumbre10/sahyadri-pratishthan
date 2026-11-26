@@ -1,3 +1,5 @@
+import {idCardSection} from './id-card.mjs';
+import {registrationSection,registrationLink} from './registration.mjs';
 import {heritageHero,inspiration,fieldStories,research,fortCare} from './heritage.mjs';
 import {historicSocials,videoJournal} from './media.mjs';
 import {featuredProjects,projectShowcase} from './projects.mjs';
@@ -10,6 +12,9 @@ const icon=i=>`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke
 const logo=t=>`<span class="logo-art"><img src="/assets/sp_logo_reg_no.webp" alt="${t.name}" width="3264" height="3264"></span>`;
 
 export function sections(lang,t){return {
+  campaign:()=>`<section class="campaign-section" aria-labelledby="campaign-title"><div class="container campaign-grid"><div class="campaign-copy"><h2 id="campaign-title">${{mr:'पुढच्या मोहिमेत सहभागी व्हा',hi:'अगले अभियान में शामिल हों',en:'See you at the next fort.'}[lang]}</h2><p>${t.joinText}</p><a class="button" href="${links.whatsapp}" ${ext}>${t.joinCta}</a></div><ol class="campaign-steps">${t.steps.map(([h,p],i)=>`<li><span aria-hidden="true">${new Intl.NumberFormat(lang).format(i+1)}</span><div><h3>${h}</h3><p>${p}</p></div></li>`).join('')}</ol></div></section>`,
+  idCard:()=>idCardSection(lang),
+  registration:()=>registrationSection(lang),
   heritageHero:()=>heritageHero(lang),
   inspiration:()=>inspiration(lang),
   fieldStories:()=>fieldStories(lang),
@@ -24,7 +29,7 @@ export function sections(lang,t){return {
   work: () => `<section id="work" class="work-section section"><div class="container"><div class="section-heading"><div><p class="eyebrow">${t.workLabel}</p><h2>${t.workTitle}</h2></div><p>${t.workIntro}</p></div><div class="work-grid">${t.work.map(([h,p],i)=>`<article class="work-item">${icon(i)}<h3>${h}</h3><p>${p}</p></article>`).join('')}</div></div></section>`,
   stories: () => `<section id="stories" class="section container"><div class="section-heading"><div><p class="eyebrow">${t.archiveLabel}</p><h2>${t.archiveTitle}</h2></div><p>${t.archiveIntro}</p></div><div class="filters" role="group" aria-label="${t.archiveLabel}" hidden>${t.filters.map((n,i)=>`<button data-filter="${i}" aria-pressed="${i===0}">${n}</button>`).join('')}</div><div class="story-grid">${t.stories.map(([place,title,date,desc],i)=>`<article class="story" data-category="${i===2?2:1}"><div class="story-top"><span class="fort-name">${place}</span>${icon(i===2?3:0)}</div><div class="story-body"><p class="story-date">${date}</p><h3>${title}</h3><p>${desc}</p><a class="text-link" href="${Object.values(sources)[i]}" ${ext}>${t.read} ${arrow}</a></div></article>`).join('')}</div></section>`,
   film: () => `<section id="film" class="film-section"><div class="container film-grid"><a class="film-poster" href="https://www.youtube.com/watch?v=TvDfkTxJqw4" ${ext} aria-label="${t.videoCta}"><img src="/assets/film.webp" alt="${t.videoCaption}" width="480" height="360" loading="lazy"><span class="big-play" aria-hidden="true">▶</span><span class="film-caption">${t.videoCaption}</span></a><div><p class="eyebrow">${t.videoLabel}</p><h2>${t.videoTitle}</h2><p>${t.videoText}</p><a class="text-link" href="https://www.youtube.com/watch?v=TvDfkTxJqw4" ${ext}>${t.videoCta} ${arrow}</a></div></div></section>`,
-  join: () => `<section id="join" class="section container join-section"><div><p class="eyebrow">${t.joinLabel}</p><h2>${t.joinTitle}</h2><p>${t.joinText}</p><a class="button" href="${links.whatsapp}" ${ext}>${t.joinCta} ${arrow}</a></div><ol class="join-steps">${t.steps.map(([h,p],i)=>`<li><span>${new Intl.NumberFormat(lang).format(i+1)}</span><div><h3>${h}</h3><p>${p}</p></div></li>`).join('')}</ol></section>`,
+  join: () => `<section id="join" class="section container join-section"><div><p class="eyebrow">${t.joinLabel}</p><h2>${t.joinTitle}</h2><p>${t.joinText}</p><a class="button" href="${links.whatsapp}" ${ext}>${t.joinCta} ${arrow}</a>${registrationLink(lang)}</div><ol class="join-steps">${t.steps.map(([h,p],i)=>`<li><span>${new Intl.NumberFormat(lang).format(i+1)}</span><div><h3>${h}</h3><p>${p}</p></div></li>`).join('')}</ol></section>`,
   faq: () => `<section class="faq-section"><div class="container faq-grid"><h2>${t.faqTitle}</h2><div>${t.faq.map(([q,a])=>`<details><summary>${q}<span aria-hidden="true">+</span></summary><p>${a}</p></details>`).join('')}</div></div></section>`,
   connect: () => `<section class="connect container"><div><h2>${t.connect}</h2><p>${t.connectText}</p></div><div class="socials">${Object.entries(links).map(([k,url])=>`<a href="${url}" ${ext}>${{instagram:'Instagram',youtube:'YouTube',whatsapp:'WhatsApp',facebook:'Facebook'}[k]} ${arrow}</a>`).join('')}</div></section>`,
   mission: () => `<div class="mission-strip"><div class="container">${t.strip.map((x,i)=>`<span>${icon([0,1,3][i])}${x}</span>`).join('')}</div></div>`,

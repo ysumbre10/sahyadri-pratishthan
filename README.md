@@ -32,7 +32,7 @@ Deploy the generated `dist/` directory to a static host. The production canonica
 - `app.js`: mobile navigation, story filters and photography credits dialog.
 - `assets/sp_logo_reg_no.webp`: owner-supplied logo, resized to 1024px and stored as lossless WebP. Its whitespace is framed using CSS.
 
-The site intentionally links to official channels for campaign participation. It has no registration database, donation processing, invented fundraising targets, unverified contact numbers or automatic social-feed synchronisation.
+The site links to official channels for campaign participation and the supplied Google Form for registration. It has no registration database, donation processing, invented fundraising targets, unverified contact numbers or automatic social-feed synchronisation.
 
 ## Content sources and launch review
 
@@ -133,3 +133,13 @@ Future document imports initially produce JPEG pages; convert them to WebP and u
 In repository Settings → Pages, choose GitHub Actions and set the custom domain to `sahyadripratishthan.com` before updating DNS. At GoDaddy, set four apex (`@`) A records to `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, and `185.199.111.153`. Set `www` CNAME to `<github-owner>.github.io` (replace with the actual repository owner, without a repository path). Replace conflicting web-hosting records only; preserve email MX/TXT records. After DNS validation and certificate issuance, enable Enforce HTTPS. Check apex and www redirects, all language homepages, and a nested work/document page.
 
 Reference: https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site
+
+## Registration and ID cards
+
+The Join page is available in Marathi, Hindi and English. It presents registration, the ID workspace and campaign participation as distinct sections. Disclosure controls use a single CSS chevron, keyboard focus stays visible, and the layout stacks on narrow screens.
+
+`registration.mjs` owns the Google Form URL. The form is linked to the private master Sheet; the deployed Apps Script processes submissions and provides a mobile-plus-DOB lookup. `registration-config.mjs` contains only its public endpoint. See `apps-script/README.md` for installation, verified state and review rules. No member dataset or credentials are included in the website.
+
+`id-card.js` renders the approved orange card at 994 × 1584. Card details come from the lookup result, and photo selection unlocks only after an approved match. The website is typeset in Georgia and Marathi fields in Noto Serif Devanagari. The role is fixed to सभासद. JPG, PNG and WebP photos up to 10 MB and 40 megapixels are downsampled in memory; zoom and position controls crop the portrait. Photos are never uploaded or placed in browser storage. Reset and page exit clear the local data.
+
+`npm run verify` builds and validates all 18 pages. `node --test tests/*.test.mjs` checks lookup gates, ID rendering, photo privacy, registration allocation and retry behavior. These tests simulate Apps Script and the DOM; live browser checks separately verified successful and nonexistent lookup responses. Publish only `dist/` using the existing GitHub Pages workflow.
