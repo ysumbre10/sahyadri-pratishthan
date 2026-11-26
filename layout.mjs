@@ -6,7 +6,7 @@ const ext='target="_blank" rel="noopener noreferrer"';
 const arrow='<span aria-hidden="true">↗</span>';
 const icons=[`<path d="M3 21V7h4v4h4V7h4v4h4V7h3v14M3 17h19M10 21v-4h5v4M12 7V2l6 2-6 2"/>`,`<path d="m5 20 6-9m-3 5 7 5 5-7-8-5-4 7ZM13 9l4-7M3 3l1 3 3 1-3 1-1 3-1-3-2-1 2-1Z"/>`,`<path d="M12 2C9 7 5 11 5 15a7 7 0 0 0 14 0c0-4-4-8-7-13ZM9 16c0 2 1 3 3 3"/>`,`<path d="M12 5C8 2 4 3 2 4v15c4-2 7-1 10 1 3-2 6-3 10-1V4c-4-2-7-1-10 1Zm0 0v15"/>`];
 const icon=i=>`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${icons[i]}</svg>`;
-const logo=t=>`<span class="logo-art"><svg viewBox="250 200 530 610" width="100%" height="100%" preserveAspectRatio="xMidYMid meet" role="img" aria-label="${t.name}"><image href="/assets/sp_logo_reg_no.webp" width="1024" height="1024"/></svg></span>`;
+const logo=t=>`<span class="logo-art"><svg viewBox="275 225 480 560" width="100%" height="100%" preserveAspectRatio="xMidYMid meet" role="img" aria-label="${t.name}"><image href="/assets/sp_logo_reg_no.webp" width="1024" height="1024"/></svg></span>`;
 
 export function layout({lang,t,slug,pageTitle,pageDescription,body}){
 const home=urlFor(lang,'');const pageUrl=urlFor(lang,slug);
