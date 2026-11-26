@@ -1,0 +1,57 @@
+[
+  {
+    "id": "trust",
+    "pages": [
+      "/assets/document-pages/trust/page-01.webp",
+      "/assets/document-pages/trust/page-02.webp",
+      "/assets/document-pages/trust/page-03.webp",
+      "/assets/document-pages/trust/page-04.webp",
+      "/assets/document-pages/trust/page-05.webp",
+      "/assets/document-pages/trust/page-06.webp",
+      "/assets/document-pages/trust/page-07.webp",
+      "/assets/document-pages/trust/page-08.webp",
+      "/assets/document-pages/trust/page-09.webp",
+      "/assets/document-pages/trust/page-10.webp"
+    ]
+  },
+  {
+    "id": "pan",
+    "pages": [
+      "/assets/document-pages/pan/page-1.webp"
+    ]
+  },
+  {
+    "id": "12a",
+    "pages": [
+      "/assets/document-pages/12a/page-1.webp",
+      "/assets/document-pages/12a/page-2.webp",
+      "/assets/document-pages/12a/page-3.webp"
+    ]
+  },
+  {
+    "id": "80g",
+    "pages": [
+      "/assets/document-pages/80g/page-1.webp",
+      "/assets/document-pages/80g/page-2.webp"
+    ]
+  },
+  {
+    "id": "csr",
+    "pages": [
+      "/assets/document-pages/csr/page-1.webp"
+    ]
+  },
+  {
+    "id": "darpan",
+    "pages": [
+      "/assets/document-pages/darpan/page-1.webp",
+      "/assets/document-pages/darpan/page-2.webp"
+    ]
+  },
+  {
+    "id": "lei",
+    "pages": [
+      "/assets/document-pages/lei/page-1.webp"
+    ]
+  }
+]

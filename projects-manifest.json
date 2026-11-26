@@ -1,0 +1,932 @@
+[
+  {
+    "id": "pratapgad",
+    "archive": "किल्ले प्रतापगड तटबंदी पाया संवर्धन -20261126T105018Z-1-001.zip",
+    "images": [
+      {
+        "id": "01",
+        "source": "किल्ले प्रतापगड तटबंदी पाया संवर्धन /किल्ले प्रतापगड तटबंदी पाया उभारणी_(3).jpg",
+        "large": "/assets/projects/pratapgad/01-large.webp",
+        "card": "/assets/projects/pratapgad/01-card.webp",
+        "thumb": "/assets/projects/pratapgad/01-thumb.webp",
+        "width": 1280,
+        "height": 960
+      },
+      {
+        "id": "02",
+        "source": "किल्ले प्रतापगड तटबंदी पाया संवर्धन /किल्ले प्रतापगड तटबंदी पाया उभारणी_(6).jpg",
+        "large": "/assets/projects/pratapgad/02-large.webp",
+        "card": "/assets/projects/pratapgad/02-card.webp",
+        "thumb": "/assets/projects/pratapgad/02-thumb.webp",
+        "width": 532,
+        "height": 1152
+      },
+      {
+        "id": "03",
+        "source": "किल्ले प्रतापगड तटबंदी पाया संवर्धन /किल्ले प्रतापगड तटबंदी पाया उभारणी_(4).jpg",
+        "large": "/assets/projects/pratapgad/03-large.webp",
+        "card": "/assets/projects/pratapgad/03-card.webp",
+        "thumb": "/assets/projects/pratapgad/03-thumb.webp",
+        "width": 719,
+        "height": 719
+      },
+      {
+        "id": "04",
+        "source": "किल्ले प्रतापगड तटबंदी पाया संवर्धन /किल्ले प्रतापगड तटबंदी पाया उभारणी_(5).jpg",
+        "large": "/assets/projects/pratapgad/04-large.webp",
+        "card": "/assets/projects/pratapgad/04-card.webp",
+        "thumb": "/assets/projects/pratapgad/04-thumb.webp",
+        "width": 532,
+        "height": 1152
+      },
+      {
+        "id": "05",
+        "source": "किल्ले प्रतापगड तटबंदी पाया संवर्धन /किल्ले प्रतापगड तटबंदी पाया उभारणी_.jpg",
+        "large": "/assets/projects/pratapgad/05-large.webp",
+        "card": "/assets/projects/pratapgad/05-card.webp",
+        "thumb": "/assets/projects/pratapgad/05-thumb.webp",
+        "width": 534,
+        "height": 1156
+      },
+      {
+        "id": "06",
+        "source": "किल्ले प्रतापगड तटबंदी पाया संवर्धन /किल्ले प्रतापगड तटबंदी पाया उभारणी_(2).jpg",
+        "large": "/assets/projects/pratapgad/06-large.webp",
+        "card": "/assets/projects/pratapgad/06-card.webp",
+        "thumb": "/assets/projects/pratapgad/06-thumb.webp",
+        "width": 534,
+        "height": 1156
+      },
+      {
+        "id": "07",
+        "source": "किल्ले प्रतापगड तटबंदी पाया संवर्धन /किल्ले प्रतापगड तटबंदी पाया उभारणी_(1).jpg",
+        "large": "/assets/projects/pratapgad/07-large.webp",
+        "card": "/assets/projects/pratapgad/07-card.webp",
+        "thumb": "/assets/projects/pratapgad/07-thumb.webp",
+        "width": 534,
+        "height": 1156
+      }
+    ],
+    "excluded": [],
+    "duplicates": []
+  },
+  {
+    "id": "vasantgad",
+    "archive": "किल्ले वसंतगड बुरुज संवर्धन -20261126T105022Z-1-001.zip",
+    "images": [
+      {
+        "id": "01",
+        "source": "किल्ले वसंतगड बुरुज संवर्धन /Screenshot_2022-07-19-11-06-21-17_1c337646f29875672b5a61192b9010f9__01.jpg",
+        "large": "/assets/projects/vasantgad/01-large.webp",
+        "card": "/assets/projects/vasantgad/01-card.webp",
+        "thumb": "/assets/projects/vasantgad/01-thumb.webp",
+        "width": 1080,
+        "height": 1364
+      },
+      {
+        "id": "02",
+        "source": "किल्ले वसंतगड बुरुज संवर्धन /Screenshot_2022-07-19-11-06-27-99_1c337646f29875672b5a61192b9010f9__01.jpg",
+        "large": "/assets/projects/vasantgad/02-large.webp",
+        "card": "/assets/projects/vasantgad/02-card.webp",
+        "thumb": "/assets/projects/vasantgad/02-thumb.webp",
+        "width": 1080,
+        "height": 882
+      }
+    ],
+    "excluded": [
+      "किल्ले वसंतगड बुरुज संवर्धन /सह्याद्री प्रतिष्ठान कागदपत्रे/1. Trust Pan.pdf"
+    ],
+    "duplicates": []
+  },
+  {
+    "id": "gateways",
+    "archive": "प्रवेशद्वार-20261126T105031Z-1-001.zip",
+    "images": [
+      {
+        "id": "01",
+        "source": "प्रवेशद्वार/स्वराज्यमंदिर राजगड पाली दरवाजा २...jpg",
+        "large": "/assets/projects/gateways/01-large.webp",
+        "card": "/assets/projects/gateways/01-card.webp",
+        "thumb": "/assets/projects/gateways/01-thumb.webp",
+        "width": 1024,
+        "height": 577
+      },
+      {
+        "id": "02",
+        "source": "प्रवेशद्वार/स्वराज्यमंदिर राजगड चोर दरवाजा .jpg",
+        "large": "/assets/projects/gateways/02-large.webp",
+        "card": "/assets/projects/gateways/02-card.webp",
+        "thumb": "/assets/projects/gateways/02-thumb.webp",
+        "width": 1024,
+        "height": 577
+      },
+      {
+        "id": "03",
+        "source": "प्रवेशद्वार/जीवधन प्रवेशद्वार.jpg",
+        "large": "/assets/projects/gateways/03-large.webp",
+        "card": "/assets/projects/gateways/03-card.webp",
+        "thumb": "/assets/projects/gateways/03-thumb.webp",
+        "width": 1080,
+        "height": 1421
+      },
+      {
+        "id": "04",
+        "source": "प्रवेशद्वार/बाणकोट प्रवेशद्वार .jpg",
+        "large": "/assets/projects/gateways/04-large.webp",
+        "card": "/assets/projects/gateways/04-card.webp",
+        "thumb": "/assets/projects/gateways/04-thumb.webp",
+        "width": 720,
+        "height": 900
+      },
+      {
+        "id": "05",
+        "source": "प्रवेशद्वार/हरिहरगड प्रवेशद्वार.jpg",
+        "large": "/assets/projects/gateways/05-large.webp",
+        "card": "/assets/projects/gateways/05-card.webp",
+        "thumb": "/assets/projects/gateways/05-thumb.webp",
+        "width": 12343,
+        "height": 16286
+      },
+      {
+        "id": "06",
+        "source": "प्रवेशद्वार/रामशेज प्रवेशद्वार १.JPG",
+        "large": "/assets/projects/gateways/06-large.webp",
+        "card": "/assets/projects/gateways/06-card.webp",
+        "thumb": "/assets/projects/gateways/06-thumb.webp",
+        "width": 3265,
+        "height": 4898
+      },
+      {
+        "id": "07",
+        "source": "प्रवेशद्वार/कर्नाळा प्रवेशद्वार.jpg",
+        "large": "/assets/projects/gateways/07-large.webp",
+        "card": "/assets/projects/gateways/07-card.webp",
+        "thumb": "/assets/projects/gateways/07-thumb.webp",
+        "width": 12343,
+        "height": 16286
+      },
+      {
+        "id": "08",
+        "source": "प्रवेशद्वार/स्वराज्यमंदिर राजगड गुंजवणे दरवाजा 2.HEIC",
+        "large": "/assets/projects/gateways/08-large.webp",
+        "card": "/assets/projects/gateways/08-card.webp",
+        "thumb": "/assets/projects/gateways/08-thumb.webp",
+        "width": 3024,
+        "height": 4032
+      },
+      {
+        "id": "09",
+        "source": "प्रवेशद्वार/गोरखगड प्रवेशद्वार.jpg",
+        "large": "/assets/projects/gateways/09-large.webp",
+        "card": "/assets/projects/gateways/09-card.webp",
+        "thumb": "/assets/projects/gateways/09-thumb.webp",
+        "width": 12343,
+        "height": 16286
+      },
+      {
+        "id": "10",
+        "source": "प्रवेशद्वार/सरसगड प्रवेशद्वार - १.jpg",
+        "large": "/assets/projects/gateways/10-large.webp",
+        "card": "/assets/projects/gateways/10-card.webp",
+        "thumb": "/assets/projects/gateways/10-thumb.webp",
+        "width": 12343,
+        "height": 16286
+      },
+      {
+        "id": "11",
+        "source": "प्रवेशद्वार/हडसर प्रवेशद्वार - २.jpg",
+        "large": "/assets/projects/gateways/11-large.webp",
+        "card": "/assets/projects/gateways/11-card.webp",
+        "thumb": "/assets/projects/gateways/11-thumb.webp",
+        "width": 2953,
+        "height": 2298
+      },
+      {
+        "id": "12",
+        "source": "प्रवेशद्वार/कोथळीगड प्रवेशद्वार.jpg",
+        "large": "/assets/projects/gateways/12-large.webp",
+        "card": "/assets/projects/gateways/12-card.webp",
+        "thumb": "/assets/projects/gateways/12-thumb.webp",
+        "width": 12343,
+        "height": 16286
+      },
+      {
+        "id": "13",
+        "source": "प्रवेशद्वार/स्वराज्यमंदिर राजगड आळु दरवाजा .jpg",
+        "large": "/assets/projects/gateways/13-large.webp",
+        "card": "/assets/projects/gateways/13-card.webp",
+        "thumb": "/assets/projects/gateways/13-thumb.webp",
+        "width": 720,
+        "height": 1088
+      },
+      {
+        "id": "14",
+        "source": "प्रवेशद्वार/स्वराज्यमंदिर राजगड पाली दरवाजा २.jpg",
+        "large": "/assets/projects/gateways/14-large.webp",
+        "card": "/assets/projects/gateways/14-card.webp",
+        "thumb": "/assets/projects/gateways/14-thumb.webp",
+        "width": 720,
+        "height": 900
+      },
+      {
+        "id": "15",
+        "source": "प्रवेशद्वार/सिंहगड प्रवेशद्वार.jpg",
+        "large": "/assets/projects/gateways/15-large.webp",
+        "card": "/assets/projects/gateways/15-card.webp",
+        "thumb": "/assets/projects/gateways/15-thumb.webp",
+        "width": 12343,
+        "height": 16286
+      },
+      {
+        "id": "16",
+        "source": "प्रवेशद्वार/रतनगड प्रवेशद्वार.jpg",
+        "large": "/assets/projects/gateways/16-large.webp",
+        "card": "/assets/projects/gateways/16-card.webp",
+        "thumb": "/assets/projects/gateways/16-thumb.webp",
+        "width": 12343,
+        "height": 16286
+      },
+      {
+        "id": "17",
+        "source": "प्रवेशद्वार/स्वराज्यमंदिर राजगड पाली प्रवेशद्वार २.jpg",
+        "large": "/assets/projects/gateways/17-large.webp",
+        "card": "/assets/projects/gateways/17-card.webp",
+        "thumb": "/assets/projects/gateways/17-thumb.webp",
+        "width": 720,
+        "height": 540
+      },
+      {
+        "id": "18",
+        "source": "प्रवेशद्वार/ रामशेज प्रवेशद्वार २.JPG",
+        "large": "/assets/projects/gateways/18-large.webp",
+        "card": "/assets/projects/gateways/18-card.webp",
+        "thumb": "/assets/projects/gateways/18-thumb.webp",
+        "width": 3265,
+        "height": 4898
+      },
+      {
+        "id": "19",
+        "source": "प्रवेशद्वार/सज्जनगड प्रवेशद्वार.jpg",
+        "large": "/assets/projects/gateways/19-large.webp",
+        "card": "/assets/projects/gateways/19-card.webp",
+        "thumb": "/assets/projects/gateways/19-thumb.webp",
+        "width": 12343,
+        "height": 16286
+      },
+      {
+        "id": "20",
+        "source": "प्रवेशद्वार/तुंग प्रवेशद्वार.jpg",
+        "large": "/assets/projects/gateways/20-large.webp",
+        "card": "/assets/projects/gateways/20-card.webp",
+        "thumb": "/assets/projects/gateways/20-thumb.webp",
+        "width": 12343,
+        "height": 16286
+      },
+      {
+        "id": "21",
+        "source": "प्रवेशद्वार/त्रिंगलवाडी प्रवेशद्वार.jpg",
+        "large": "/assets/projects/gateways/21-large.webp",
+        "card": "/assets/projects/gateways/21-card.webp",
+        "thumb": "/assets/projects/gateways/21-thumb.webp",
+        "width": 1840,
+        "height": 3984
+      },
+      {
+        "id": "22",
+        "source": "प्रवेशद्वार/स्वराज्यमंदिर राजगड गुंजवणे प्रवेशद्वार 1.HEIC",
+        "large": "/assets/projects/gateways/22-large.webp",
+        "card": "/assets/projects/gateways/22-card.webp",
+        "thumb": "/assets/projects/gateways/22-thumb.webp",
+        "width": 3024,
+        "height": 4032
+      },
+      {
+        "id": "23",
+        "source": "प्रवेशद्वार/तोरणा प्रवेशद्वार.jpg",
+        "large": "/assets/projects/gateways/23-large.webp",
+        "card": "/assets/projects/gateways/23-card.webp",
+        "thumb": "/assets/projects/gateways/23-thumb.webp",
+        "width": 12343,
+        "height": 16286
+      },
+      {
+        "id": "24",
+        "source": "प्रवेशद्वार/तिकोना प्रवेशद्वार.jpg",
+        "large": "/assets/projects/gateways/24-large.webp",
+        "card": "/assets/projects/gateways/24-card.webp",
+        "thumb": "/assets/projects/gateways/24-thumb.webp",
+        "width": 12343,
+        "height": 16286
+      },
+      {
+        "id": "25",
+        "source": "प्रवेशद्वार/हडसर प्रवेशद्वार - १.jpg",
+        "large": "/assets/projects/gateways/25-large.webp",
+        "card": "/assets/projects/gateways/25-card.webp",
+        "thumb": "/assets/projects/gateways/25-thumb.webp",
+        "width": 12343,
+        "height": 16286
+      },
+      {
+        "id": "26",
+        "source": "प्रवेशद्वार/सरसगड प्रवेशद्वार - २.jpg",
+        "large": "/assets/projects/gateways/26-large.webp",
+        "card": "/assets/projects/gateways/26-card.webp",
+        "thumb": "/assets/projects/gateways/26-thumb.webp",
+        "width": 12343,
+        "height": 16286
+      }
+    ],
+    "excluded": [],
+    "duplicates": []
+  },
+  {
+    "id": "cannons",
+    "archive": "तोफगाडे-20261126T105027Z-1-001.zip",
+    "images": [
+      {
+        "id": "01",
+        "source": "तोफगाडे/किल्ले कुलाबा तोफगाडा 2.jpg",
+        "large": "/assets/projects/cannons/01-large.webp",
+        "card": "/assets/projects/cannons/01-card.webp",
+        "thumb": "/assets/projects/cannons/01-thumb.webp",
+        "width": 1080,
+        "height": 808
+      },
+      {
+        "id": "02",
+        "source": "तोफगाडे/ठाणे तोफगाडे .jpg",
+        "large": "/assets/projects/cannons/02-large.webp",
+        "card": "/assets/projects/cannons/02-card.webp",
+        "thumb": "/assets/projects/cannons/02-thumb.webp",
+        "width": 720,
+        "height": 540
+      },
+      {
+        "id": "03",
+        "source": "तोफगाडे/कोथलीगड तोफगाडा क्रमांक 3.jpg",
+        "large": "/assets/projects/cannons/03-large.webp",
+        "card": "/assets/projects/cannons/03-card.webp",
+        "thumb": "/assets/projects/cannons/03-thumb.webp",
+        "width": 960,
+        "height": 720
+      },
+      {
+        "id": "04",
+        "source": "तोफगाडे/मंडणगड तोफगाडा_.jpg",
+        "large": "/assets/projects/cannons/04-large.webp",
+        "card": "/assets/projects/cannons/04-card.webp",
+        "thumb": "/assets/projects/cannons/04-thumb.webp",
+        "width": 960,
+        "height": 640
+      },
+      {
+        "id": "05",
+        "source": "तोफगाडे/भुदरगड तोफगाडा_(1).jpg",
+        "large": "/assets/projects/cannons/05-large.webp",
+        "card": "/assets/projects/cannons/05-card.webp",
+        "thumb": "/assets/projects/cannons/05-thumb.webp",
+        "width": 1080,
+        "height": 1440
+      },
+      {
+        "id": "06",
+        "source": "तोफगाडे/पावनगड तोफगाडा (2).jpg",
+        "large": "/assets/projects/cannons/06-large.webp",
+        "card": "/assets/projects/cannons/06-card.webp",
+        "thumb": "/assets/projects/cannons/06-thumb.webp",
+        "width": 900,
+        "height": 900
+      },
+      {
+        "id": "07",
+        "source": "तोफगाडे/कोर्लाई तोफगाडा २.jpg",
+        "large": "/assets/projects/cannons/07-large.webp",
+        "card": "/assets/projects/cannons/07-card.webp",
+        "thumb": "/assets/projects/cannons/07-thumb.webp",
+        "width": 720,
+        "height": 334
+      },
+      {
+        "id": "08",
+        "source": "तोफगाडे/सिंहगड तोफगाडा_.jpg",
+        "large": "/assets/projects/cannons/08-large.webp",
+        "card": "/assets/projects/cannons/08-card.webp",
+        "thumb": "/assets/projects/cannons/08-thumb.webp",
+        "width": 1080,
+        "height": 993
+      },
+      {
+        "id": "09",
+        "source": "तोफगाडे/उंदेरी तोफगाडे  सर्व ४.jpg",
+        "large": "/assets/projects/cannons/09-large.webp",
+        "card": "/assets/projects/cannons/09-card.webp",
+        "thumb": "/assets/projects/cannons/09-thumb.webp",
+        "width": 720,
+        "height": 540
+      },
+      {
+        "id": "10",
+        "source": "तोफगाडे/ठाणे तोफगाडे २.jpg",
+        "large": "/assets/projects/cannons/10-large.webp",
+        "card": "/assets/projects/cannons/10-card.webp",
+        "thumb": "/assets/projects/cannons/10-thumb.webp",
+        "width": 720,
+        "height": 540
+      },
+      {
+        "id": "11",
+        "source": "तोफगाडे/पद्मदुर्ग तोफगाडा क्रमांक 1.jpg",
+        "large": "/assets/projects/cannons/11-large.webp",
+        "card": "/assets/projects/cannons/11-card.webp",
+        "thumb": "/assets/projects/cannons/11-thumb.webp",
+        "width": 960,
+        "height": 641
+      },
+      {
+        "id": "12",
+        "source": "तोफगाडे/उंदेरी तोफगाडा_(1).jpg",
+        "large": "/assets/projects/cannons/12-large.webp",
+        "card": "/assets/projects/cannons/12-card.webp",
+        "thumb": "/assets/projects/cannons/12-thumb.webp",
+        "width": 900,
+        "height": 900
+      },
+      {
+        "id": "13",
+        "source": "तोफगाडे/किल्ले उंदेरी तोफगाडा_.jpg",
+        "large": "/assets/projects/cannons/13-large.webp",
+        "card": "/assets/projects/cannons/13-card.webp",
+        "thumb": "/assets/projects/cannons/13-thumb.webp",
+        "width": 960,
+        "height": 720
+      },
+      {
+        "id": "14",
+        "source": "तोफगाडे/भुदरगड तोफगाडा_.jpg",
+        "large": "/assets/projects/cannons/14-large.webp",
+        "card": "/assets/projects/cannons/14-card.webp",
+        "thumb": "/assets/projects/cannons/14-thumb.webp",
+        "width": 1080,
+        "height": 1440
+      },
+      {
+        "id": "15",
+        "source": "तोफगाडे/कोथळीगड तोफ गाडा क्रमांक 1.jpg",
+        "large": "/assets/projects/cannons/15-large.webp",
+        "card": "/assets/projects/cannons/15-card.webp",
+        "thumb": "/assets/projects/cannons/15-thumb.webp",
+        "width": 9585,
+        "height": 8824
+      },
+      {
+        "id": "16",
+        "source": "तोफगाडे/सुप्पा तोफगाडा .jpg",
+        "large": "/assets/projects/cannons/16-large.webp",
+        "card": "/assets/projects/cannons/16-card.webp",
+        "thumb": "/assets/projects/cannons/16-thumb.webp",
+        "width": 720,
+        "height": 720
+      },
+      {
+        "id": "17",
+        "source": "तोफगाडे/उंदेरी तोफगाडा_.jpg",
+        "large": "/assets/projects/cannons/17-large.webp",
+        "card": "/assets/projects/cannons/17-card.webp",
+        "thumb": "/assets/projects/cannons/17-thumb.webp",
+        "width": 900,
+        "height": 900
+      },
+      {
+        "id": "18",
+        "source": "तोफगाडे/उंदेरी लोखंडी तोफगाडे .jpg",
+        "large": "/assets/projects/cannons/18-large.webp",
+        "card": "/assets/projects/cannons/18-card.webp",
+        "thumb": "/assets/projects/cannons/18-thumb.webp",
+        "width": 720,
+        "height": 334
+      },
+      {
+        "id": "19",
+        "source": "तोफगाडे/किल्ले औसा तोफगाडा (2).jpg",
+        "large": "/assets/projects/cannons/19-large.webp",
+        "card": "/assets/projects/cannons/19-card.webp",
+        "thumb": "/assets/projects/cannons/19-thumb.webp",
+        "width": 1080,
+        "height": 994
+      },
+      {
+        "id": "20",
+        "source": "तोफगाडे/मच्छिन्द्रगड तोफगाडा १.jpg",
+        "large": "/assets/projects/cannons/20-large.webp",
+        "card": "/assets/projects/cannons/20-card.webp",
+        "thumb": "/assets/projects/cannons/20-thumb.webp",
+        "width": 1000,
+        "height": 666
+      },
+      {
+        "id": "21",
+        "source": "तोफगाडे/किल्ले डहाणू तोफगाडा 1.jpg",
+        "large": "/assets/projects/cannons/21-large.webp",
+        "card": "/assets/projects/cannons/21-card.webp",
+        "thumb": "/assets/projects/cannons/21-thumb.webp",
+        "width": 1280,
+        "height": 576
+      },
+      {
+        "id": "22",
+        "source": "तोफगाडे/किल्ले पद्मदुर्ग तोफगाडा क्रमांक 1.jpg",
+        "large": "/assets/projects/cannons/22-large.webp",
+        "card": "/assets/projects/cannons/22-card.webp",
+        "thumb": "/assets/projects/cannons/22-thumb.webp",
+        "width": 720,
+        "height": 480
+      },
+      {
+        "id": "23",
+        "source": "तोफगाडे/चावंड तोफगाडा_.jpg",
+        "large": "/assets/projects/cannons/23-large.webp",
+        "card": "/assets/projects/cannons/23-card.webp",
+        "thumb": "/assets/projects/cannons/23-thumb.webp",
+        "width": 9585,
+        "height": 8824
+      },
+      {
+        "id": "24",
+        "source": "तोफगाडे/मच्छिन्द्रगड तोफगाडा २.jpg",
+        "large": "/assets/projects/cannons/24-large.webp",
+        "card": "/assets/projects/cannons/24-card.webp",
+        "thumb": "/assets/projects/cannons/24-thumb.webp",
+        "width": 1000,
+        "height": 666
+      },
+      {
+        "id": "25",
+        "source": "तोफगाडे/कोर्लाई तोफगाडा १.jpg",
+        "large": "/assets/projects/cannons/25-large.webp",
+        "card": "/assets/projects/cannons/25-card.webp",
+        "thumb": "/assets/projects/cannons/25-thumb.webp",
+        "width": 445,
+        "height": 960
+      },
+      {
+        "id": "26",
+        "source": "तोफगाडे/कोथळीगड तोफगाडा_.jpg",
+        "large": "/assets/projects/cannons/26-large.webp",
+        "card": "/assets/projects/cannons/26-card.webp",
+        "thumb": "/assets/projects/cannons/26-thumb.webp",
+        "width": 1080,
+        "height": 993
+      },
+      {
+        "id": "27",
+        "source": "तोफगाडे/किल्ले डहाणू तोफगाडा 2.jpg",
+        "large": "/assets/projects/cannons/27-large.webp",
+        "card": "/assets/projects/cannons/27-card.webp",
+        "thumb": "/assets/projects/cannons/27-thumb.webp",
+        "width": 576,
+        "height": 1280
+      },
+      {
+        "id": "28",
+        "source": "तोफगाडे/किल्ले कुलाबा तोफगाडा 1.jpg",
+        "large": "/assets/projects/cannons/28-large.webp",
+        "card": "/assets/projects/cannons/28-card.webp",
+        "thumb": "/assets/projects/cannons/28-thumb.webp",
+        "width": 1080,
+        "height": 606
+      },
+      {
+        "id": "29",
+        "source": "तोफगाडे/उंदेरी लोखंडी तोफगाडा .jpg",
+        "large": "/assets/projects/cannons/29-large.webp",
+        "card": "/assets/projects/cannons/29-card.webp",
+        "thumb": "/assets/projects/cannons/29-thumb.webp",
+        "width": 720,
+        "height": 900
+      },
+      {
+        "id": "30",
+        "source": "तोफगाडे/कोथळीगड तोफगाडा क्रमांक 2.jpg",
+        "large": "/assets/projects/cannons/30-large.webp",
+        "card": "/assets/projects/cannons/30-card.webp",
+        "thumb": "/assets/projects/cannons/30-thumb.webp",
+        "width": 9585,
+        "height": 8824
+      },
+      {
+        "id": "31",
+        "source": "तोफगाडे/सिंहगड तोफगाडा_(1).jpg",
+        "large": "/assets/projects/cannons/31-large.webp",
+        "card": "/assets/projects/cannons/31-card.webp",
+        "thumb": "/assets/projects/cannons/31-thumb.webp",
+        "width": 9585,
+        "height": 8824
+      },
+      {
+        "id": "32",
+        "source": "तोफगाडे/संग्रामदुर्ग तोफगाडा_.jpg",
+        "large": "/assets/projects/cannons/32-large.webp",
+        "card": "/assets/projects/cannons/32-card.webp",
+        "thumb": "/assets/projects/cannons/32-thumb.webp",
+        "width": 9585,
+        "height": 8824
+      },
+      {
+        "id": "33",
+        "source": "तोफगाडे/बाणकोट तोफगाडा_.jpg",
+        "large": "/assets/projects/cannons/33-large.webp",
+        "card": "/assets/projects/cannons/33-card.webp",
+        "thumb": "/assets/projects/cannons/33-thumb.webp",
+        "width": 9585,
+        "height": 8824
+      },
+      {
+        "id": "34",
+        "source": "तोफगाडे/वेताळवाडी तोफगाडा_.jpg",
+        "large": "/assets/projects/cannons/34-large.webp",
+        "card": "/assets/projects/cannons/34-card.webp",
+        "thumb": "/assets/projects/cannons/34-thumb.webp",
+        "width": 9585,
+        "height": 8824
+      }
+    ],
+    "excluded": [],
+    "duplicates": [
+      {
+        "source": "तोफगाडे/कोथळीगड तोफगाडा क्रमांक 1.jpg",
+        "sameAs": "15"
+      },
+      {
+        "source": "तोफगाडे/कोथळी गड तोफगाडा क्रमांक 2.jpg",
+        "sameAs": "30"
+      }
+    ]
+  },
+  {
+    "id": "murarbaji",
+    "archive": "रणधुरंदर मुरारबाजी स्मारक -20261126T105035Z-1-001.zip",
+    "images": [
+      {
+        "id": "01",
+        "source": "रणधुरंदर मुरारबाजी स्मारक /विरगळ स्थापना २.jpg",
+        "large": "/assets/projects/murarbaji/01-large.webp",
+        "card": "/assets/projects/murarbaji/01-card.webp",
+        "thumb": "/assets/projects/murarbaji/01-thumb.webp",
+        "width": 720,
+        "height": 377
+      },
+      {
+        "id": "02",
+        "source": "रणधुरंदर मुरारबाजी स्मारक /रणधुरंदर मुरारबाजी समाधी .jpg",
+        "large": "/assets/projects/murarbaji/02-large.webp",
+        "card": "/assets/projects/murarbaji/02-card.webp",
+        "thumb": "/assets/projects/murarbaji/02-thumb.webp",
+        "width": 539,
+        "height": 960
+      },
+      {
+        "id": "03",
+        "source": "रणधुरंदर मुरारबाजी स्मारक /रणधुरंदर मुरारबाजी शिल्प २.jpg",
+        "large": "/assets/projects/murarbaji/03-large.webp",
+        "card": "/assets/projects/murarbaji/03-card.webp",
+        "thumb": "/assets/projects/murarbaji/03-thumb.webp",
+        "width": 720,
+        "height": 900
+      },
+      {
+        "id": "04",
+        "source": "रणधुरंदर मुरारबाजी स्मारक /रणधुरंदर मुरारबाजी समाधी स्मारक .jpg",
+        "large": "/assets/projects/murarbaji/04-large.webp",
+        "card": "/assets/projects/murarbaji/04-card.webp",
+        "thumb": "/assets/projects/murarbaji/04-thumb.webp",
+        "width": 720,
+        "height": 900
+      },
+      {
+        "id": "05",
+        "source": "रणधुरंदर मुरारबाजी स्मारक /माहिती फलक .jpg",
+        "large": "/assets/projects/murarbaji/05-large.webp",
+        "card": "/assets/projects/murarbaji/05-card.webp",
+        "thumb": "/assets/projects/murarbaji/05-thumb.webp",
+        "width": 720,
+        "height": 876
+      },
+      {
+        "id": "06",
+        "source": "रणधुरंदर मुरारबाजी स्मारक /मुरारबाजी शिल्प १.jpg",
+        "large": "/assets/projects/murarbaji/06-large.webp",
+        "card": "/assets/projects/murarbaji/06-card.webp",
+        "thumb": "/assets/projects/murarbaji/06-thumb.webp",
+        "width": 720,
+        "height": 960
+      },
+      {
+        "id": "07",
+        "source": "रणधुरंदर मुरारबाजी स्मारक /रणधुरंदर मुरारबाजी अस्थी .jpg",
+        "large": "/assets/projects/murarbaji/07-large.webp",
+        "card": "/assets/projects/murarbaji/07-card.webp",
+        "thumb": "/assets/projects/murarbaji/07-thumb.webp",
+        "width": 720,
+        "height": 1593
+      },
+      {
+        "id": "08",
+        "source": "रणधुरंदर मुरारबाजी स्मारक /विरगळ स्थापना .jpg",
+        "large": "/assets/projects/murarbaji/08-large.webp",
+        "card": "/assets/projects/murarbaji/08-card.webp",
+        "thumb": "/assets/projects/murarbaji/08-thumb.webp",
+        "width": 720,
+        "height": 377
+      },
+      {
+        "id": "09",
+        "source": "रणधुरंदर मुरारबाजी स्मारक /१११ फुटी भगवा ध्वज १.JPG",
+        "large": "/assets/projects/murarbaji/09-large.webp",
+        "card": "/assets/projects/murarbaji/09-card.webp",
+        "thumb": "/assets/projects/murarbaji/09-thumb.webp",
+        "width": 4000,
+        "height": 6000
+      },
+      {
+        "id": "10",
+        "source": "रणधुरंदर मुरारबाजी स्मारक /१११ फुटी भगवा ध्वज .jpg",
+        "large": "/assets/projects/murarbaji/10-large.webp",
+        "card": "/assets/projects/murarbaji/10-card.webp",
+        "thumb": "/assets/projects/murarbaji/10-thumb.webp",
+        "width": 720,
+        "height": 720
+      }
+    ],
+    "excluded": [],
+    "duplicates": []
+  },
+  {
+    "id": "rajgad",
+    "archive": "राजगड संवर्धन मोहीम मिळालेल्या वस्तू -20261126T105038Z-1-001.zip",
+    "images": [
+      {
+        "id": "01",
+        "source": "राजगड संवर्धन मोहीम मिळालेल्या वस्तू /IMG-20220212-WA0023.jpg",
+        "large": "/assets/projects/rajgad/01-large.webp",
+        "card": "/assets/projects/rajgad/01-card.webp",
+        "thumb": "/assets/projects/rajgad/01-thumb.webp",
+        "width": 960,
+        "height": 635
+      },
+      {
+        "id": "02",
+        "source": "राजगड संवर्धन मोहीम मिळालेल्या वस्तू /IMG-20211122-WA0051.jpg",
+        "large": "/assets/projects/rajgad/02-large.webp",
+        "card": "/assets/projects/rajgad/02-card.webp",
+        "thumb": "/assets/projects/rajgad/02-thumb.webp",
+        "width": 900,
+        "height": 590
+      },
+      {
+        "id": "03",
+        "source": "राजगड संवर्धन मोहीम मिळालेल्या वस्तू /IMG-20211122-WA0045(1).jpg",
+        "large": "/assets/projects/rajgad/03-large.webp",
+        "card": "/assets/projects/rajgad/03-card.webp",
+        "thumb": "/assets/projects/rajgad/03-thumb.webp",
+        "width": 878,
+        "height": 878
+      },
+      {
+        "id": "04",
+        "source": "राजगड संवर्धन मोहीम मिळालेल्या वस्तू /IMG-20220212-WA0022.jpg",
+        "large": "/assets/projects/rajgad/04-large.webp",
+        "card": "/assets/projects/rajgad/04-card.webp",
+        "thumb": "/assets/projects/rajgad/04-thumb.webp",
+        "width": 733,
+        "height": 454
+      },
+      {
+        "id": "05",
+        "source": "राजगड संवर्धन मोहीम मिळालेल्या वस्तू /IMG-20220212-WA0025.jpg",
+        "large": "/assets/projects/rajgad/05-large.webp",
+        "card": "/assets/projects/rajgad/05-card.webp",
+        "thumb": "/assets/projects/rajgad/05-thumb.webp",
+        "width": 700,
+        "height": 960
+      },
+      {
+        "id": "06",
+        "source": "राजगड संवर्धन मोहीम मिळालेल्या वस्तू /IMG-20220212-WA0026.jpg",
+        "large": "/assets/projects/rajgad/06-large.webp",
+        "card": "/assets/projects/rajgad/06-card.webp",
+        "thumb": "/assets/projects/rajgad/06-thumb.webp",
+        "width": 405,
+        "height": 900
+      },
+      {
+        "id": "07",
+        "source": "राजगड संवर्धन मोहीम मिळालेल्या वस्तू /IMG-20211122-WA0053.jpg",
+        "large": "/assets/projects/rajgad/07-large.webp",
+        "card": "/assets/projects/rajgad/07-card.webp",
+        "thumb": "/assets/projects/rajgad/07-thumb.webp",
+        "width": 788,
+        "height": 960
+      },
+      {
+        "id": "08",
+        "source": "राजगड संवर्धन मोहीम मिळालेल्या वस्तू /IMG-20220212-WA0024.jpg",
+        "large": "/assets/projects/rajgad/08-large.webp",
+        "card": "/assets/projects/rajgad/08-card.webp",
+        "thumb": "/assets/projects/rajgad/08-thumb.webp",
+        "width": 863,
+        "height": 960
+      },
+      {
+        "id": "09",
+        "source": "राजगड संवर्धन मोहीम मिळालेल्या वस्तू /IMG-20211122-WA0054.jpg",
+        "large": "/assets/projects/rajgad/09-large.webp",
+        "card": "/assets/projects/rajgad/09-card.webp",
+        "thumb": "/assets/projects/rajgad/09-thumb.webp",
+        "width": 950,
+        "height": 960
+      }
+    ],
+    "excluded": [],
+    "duplicates": [
+      {
+        "source": "राजगड संवर्धन मोहीम मिळालेल्या वस्तू /IMG-20211122-WA0051(1).jpg",
+        "sameAs": "02"
+      },
+      {
+        "source": "राजगड संवर्धन मोहीम मिळालेल्या वस्तू /IMG-20211122-WA0045.jpg",
+        "sameAs": "03"
+      }
+    ]
+  },
+  {
+    "id": "janjira",
+    "archive": "किल्ले जंजिरा राष्ट्रध्वज -20261126T105005Z-1-001.zip",
+    "images": [
+      {
+        "id": "01",
+        "source": "किल्ले जंजिरा राष्ट्रध्वज /किल्ले जंजिरा राष्ट्रध्वज.jpg",
+        "large": "/assets/projects/janjira/01-large.webp",
+        "card": "/assets/projects/janjira/01-card.webp",
+        "thumb": "/assets/projects/janjira/01-thumb.webp",
+        "width": 1080,
+        "height": 528
+      },
+      {
+        "id": "02",
+        "source": "किल्ले जंजिरा राष्ट्रध्वज /किल्ले जंजिरा राष्ट्रध्वज_.jpg",
+        "large": "/assets/projects/janjira/02-large.webp",
+        "card": "/assets/projects/janjira/02-card.webp",
+        "thumb": "/assets/projects/janjira/02-thumb.webp",
+        "width": 1080,
+        "height": 846
+      },
+      {
+        "id": "03",
+        "source": "किल्ले जंजिरा राष्ट्रध्वज /किल्ले जंजिरा राष्ट्रध्वज(1).jpg",
+        "large": "/assets/projects/janjira/03-large.webp",
+        "card": "/assets/projects/janjira/03-card.webp",
+        "thumb": "/assets/projects/janjira/03-thumb.webp",
+        "width": 717,
+        "height": 711
+      }
+    ],
+    "excluded": [],
+    "duplicates": []
+  },
+  {
+    "id": "padmadurg",
+    "archive": "किल्ले पद्मदुर्ग परमपवित्र भगवाध्वज -20261126T105012Z-1-001.zip",
+    "images": [
+      {
+        "id": "01",
+        "source": "किल्ले पद्मदुर्ग परमपवित्र भगवाध्वज /किल्ले पद्मदुर्ग परमपवित्र भगवा ध्वज_.jpg",
+        "large": "/assets/projects/padmadurg/01-large.webp",
+        "card": "/assets/projects/padmadurg/01-card.webp",
+        "thumb": "/assets/projects/padmadurg/01-thumb.webp",
+        "width": 720,
+        "height": 405
+      },
+      {
+        "id": "02",
+        "source": "किल्ले पद्मदुर्ग परमपवित्र भगवाध्वज /किल्ले पद्मदुर्ग परमपवित्र भगवा ध्वज_(2).jpg",
+        "large": "/assets/projects/padmadurg/02-large.webp",
+        "card": "/assets/projects/padmadurg/02-card.webp",
+        "thumb": "/assets/projects/padmadurg/02-thumb.webp",
+        "width": 979,
+        "height": 979
+      },
+      {
+        "id": "03",
+        "source": "किल्ले पद्मदुर्ग परमपवित्र भगवाध्वज /किल्ले पद्मदुर्ग परमपवित्र भगवा ध्वज_(1).jpg",
+        "large": "/assets/projects/padmadurg/03-large.webp",
+        "card": "/assets/projects/padmadurg/03-card.webp",
+        "thumb": "/assets/projects/padmadurg/03-thumb.webp",
+        "width": 720,
+        "height": 1080
+      }
+    ],
+    "excluded": [],
+    "duplicates": []
+  }
+]
