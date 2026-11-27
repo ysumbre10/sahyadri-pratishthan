@@ -5,11 +5,11 @@ Source: owner-supplied `presentation.pptx` (126 slides) and its PDF in Downloads
 ## Editorial decisions
 
 - Founding year: slide 7 says 2009; slide 9 says 2008. Owner clarification requested. Neither date published as definitive.
-- Exact founder Facebook and Instagram links requested from owner. Do not substitute organisational profiles or guess handles.
+- Founder social profiles found through Google on 27 November 2026: https://www.instagram.com/dr.shramik_sahyadri/ (profile title: डॉ. श्रमिक चंद्रशेखर धन्वंतरी; indexed posts reference Shramik Gojamgunde) and https://www.facebook.com/shramikchandrashekhar.gojamgunde/ (same display name, indexed personal reels). Instagram profile page title and handle were checked in Chrome. These are separate from the organisation’s social links.
 - Slide 119 certificate: exhibition inaugurated 22 May 2010; National Record 2011. This takes precedence over the conflicting introductory claim in slide 5.
 - Slide 116 certificate confirms 30 March 2016, around 1,350 volunteers and 300 forts.
 - August 2022 figures (17,240 volunteers / 25 doors / 42 cannon carriages) are explicitly historical, never live counters.
-- PhD completion is not established by “Appeared P.H.D.”; no doctorate claimed. Committee membership is historical in this deck and not asserted as a current appointment.
+- The owner confirmed on 27 November 2026 that Shramik Gojamgunde has completed his PhD. The website now uses Dr. / डॉ. and states completion, superseding the older slide’s “Appeared P.H.D.” wording. Committee membership is historical in this deck and not asserted as a current appointment.
 - Private home address, personal telephone numbers and date of birth are omitted.
 - No achieved Guinness record claimed. Fort-visit totals differ between slides 5 and 120, so no definitive total published.
 - Rajgad proposed gateways remain described as proposed; preservation of existing timber is distinguished.
