@@ -14,10 +14,36 @@ export const pageDefinitions=[
 ];
 export const urlFor=(lang,slug='')=>`${lang==='mr'?'/':`/${lang}/`}${slug?slug+'/':''}`;
 export const pageText={
- mr:{founder:['डॉ. श्रमिक गोजमगुंडे','सह्याद्री प्रतिष्ठानचे संस्थापक अध्यक्ष आणि दुर्गसंवर्धनासाठी त्यांचा प्रवास.'],journey:['दुर्गसेवेचा कार्यप्रवास','दुर्गसंवर्धन, जनजागृती आणि समाजसेवा : संस्थेच्या संग्रहातील नोंदी.'],home:'मुख्यपृष्ठ',more:'अधिक जाणून घ्या',overview:'सह्याद्रीशी नाते जोडा.',about:['आमच्याविषयी','गड-किल्ल्यांच्या जतनासाठी एकत्र आलेल्या दुर्गसेवकांची चळवळ.'],work:['आमचे कार्य','दुर्गसंवर्धन, श्रमदान आणि इतिहासाच्या जागरासाठी आमचे प्रयत्न.'],stories:['कार्याच्या नोंदी','गड-किल्ल्यांवरील उपक्रम आणि मोहिमांच्या प्रकाशित नोंदी.'],documents:['अधिकृत कागदपत्रे','संस्थेची नोंदणी प्रमाणपत्रे आणि अधिकृत कागदपत्रे येथे वाचा.'],join:['सहभागी व्हा','आपला वेळ आणि कौशल्य दुर्गसंवर्धनाच्या कार्याला द्या.']},
- hi:{founder:['डॉ. श्रमिक गोजमगुंडे','सह्याद्री प्रतिष्ठान के संस्थापक अध्यक्ष और दुर्ग संरक्षण की उनकी यात्रा।'],journey:['दुर्गसेवा की यात्रा','दुर्ग संरक्षण, जनजागृति और समाजसेवा : संस्था के संग्रह से।'],home:'मुख्य पृष्ठ',more:'और जानें',overview:'सह्याद्री से जुड़ें.',about:['हमारे बारे में','किलों की विरासत को सँजोने के लिए एकजुट दुर्गसेवकों का अभियान।'],work:['हमारा कार्य','दुर्ग संरक्षण, श्रमदान और इतिहास के प्रति जागरूकता के हमारे प्रयास।'],stories:['कार्य की झलकियाँ','किलों पर हुए कार्यक्रमों और अभियानों की प्रकाशित रिपोर्ट।'],documents:['आधिकारिक दस्तावेज़','संस्था के पंजीकरण प्रमाणपत्र और आधिकारिक दस्तावेज़ यहाँ पढ़ें।'],join:['अभियान से जुड़ें','अपना समय और कौशल किलों के संरक्षण के कार्य में लगाएँ।']},
- en:{founder:['Dr. Shramik Gojamgunde','Meet the founder of Sahyadri Pratishthan through his work in fort conservation, photography and public education.'],journey:['A journey of service','Fort conservation, public education and community service from the organisation’s historical archive.'],home:'Home',more:'Explore this section',overview:'Find your connection to the Sahyadris.',about:['Our story','Meet the movement of volunteers working to preserve our shared heritage.'],work:['Our work','Fort conservation, volunteer service and the work of keeping history alive.'],stories:['Field notes','Published accounts of programmes and conservation visits across the forts.'],documents:['Official documents','Read the organisation’s registration certificates and official records.'],join:['Join the movement','Bring your time and skills to the care of our forts.']}
+ mr:{
+  home:'मुख्यपृष्ठ',more:'अधिक जाणून घ्या',overview:'सह्याद्रीशी नाते जोडा.',
+  founder:['डॉ. श्रमिक गोजमगुंडे','सह्याद्री प्रतिष्ठानचे संस्थापक अध्यक्ष डॉ. श्रमिक गोजमगुंडे यांचा दुर्गसंवर्धन, छायाचित्रण आणि इतिहासाच्या जनजागृतीतील कार्यप्रवास जाणून घ्या.'],
+  journey:['दुर्गसेवेचा कार्यप्रवास','सह्याद्री प्रतिष्ठानचा दुर्गसंवर्धन, जनजागृती आणि समाजसेवेचा प्रवास पाहा. संस्थेच्या संग्रहातील मोहिमा, छायाचित्रे आणि कार्याच्या नोंदी वाचा.'],
+  about:['दुर्गसंवर्धनाची आमची चळवळ','महाराष्ट्रातील गड-किल्ल्यांचे जतन करणाऱ्या सह्याद्री प्रतिष्ठानची ओळख. दुर्गसेवकांचे श्रमदान, इतिहासाचा जागर आणि संस्थेचा कार्यप्रवास जाणून घ्या.'],
+  work:['गड-किल्ल्यांवरील संवर्धन कार्य','सह्याद्री प्रतिष्ठानच्या गड-किल्ल्यांवरील दुर्गसंवर्धन मोहिमा पाहा. महादरवाजे, तोफा, पाण्याच्या टाक्या आणि श्रमदानाच्या कार्याचे छायाचित्र संग्रह.'],
+  stories:['दुर्गसंवर्धन मोहिमांच्या नोंदी','सह्याद्री प्रतिष्ठानच्या गड-किल्ल्यांवरील उपक्रम, अभ्यासभेटी आणि मोहिमांच्या प्रकाशित नोंदी वाचा. मूळ वृत्तस्रोत आणि कार्याच्या संग्रहाशी जोडले जा.'],
+  documents:['अधिकृत कागदपत्रे','सह्याद्री प्रतिष्ठानची नोंदणी प्रमाणपत्रे आणि अधिकृत कागदपत्रे येथे वाचा. संस्थेच्या उपलब्ध मूळ नोंदींच्या प्रतिमा एकाच ठिकाणी पाहा.'],
+  join:['दुर्गसंवर्धनात सहभागी व्हा','सह्याद्री प्रतिष्ठानच्या दुर्गसंवर्धन कार्यात सहभागी व्हा. सभासद नोंदणी, मोहिमांची माहिती आणि स्वयंसेवक म्हणून आपला वेळ व कौशल्य देण्याचे मार्ग जाणून घ्या.']
+ },
+ hi:{
+  home:'मुख्य पृष्ठ',more:'और जानें',overview:'सह्याद्री से जुड़ें.',
+  founder:['डॉ. श्रमिक गोजमगुंडे','सह्याद्री प्रतिष्ठान के संस्थापक अध्यक्ष डॉ. श्रमिक गोजमगुंडे की दुर्ग संरक्षण, फोटोग्राफी और इतिहास के प्रति जनजागृति की यात्रा जानें।'],
+  journey:['दुर्गसेवा की यात्रा','सह्याद्री प्रतिष्ठान की दुर्ग संरक्षण, जनजागृति और समाजसेवा की यात्रा देखें। संस्था के संग्रह से अभियानों, तस्वीरों और कार्य के विवरण पढ़ें।'],
+  about:['दुर्ग संरक्षण का हमारा अभियान','महाराष्ट्र के किलों की विरासत सँजोने वाले सह्याद्री प्रतिष्ठान को जानें। दुर्गसेवकों के श्रमदान, इतिहास के प्रति जागरूकता और संस्था की यात्रा के बारे में पढ़ें।'],
+  work:['किलों पर संरक्षण कार्य','सह्याद्री प्रतिष्ठान के दुर्ग संरक्षण अभियानों को तस्वीरों में देखें। किलों के प्रवेशद्वार, तोपें, जलकुंड और स्वयंसेवकों के श्रमदान के संग्रह।'],
+  stories:['दुर्ग संरक्षण अभियानों के विवरण','सह्याद्री प्रतिष्ठान के किलों पर हुए कार्यक्रमों, अध्ययन यात्राओं और अभियानों की प्रकाशित रिपोर्ट पढ़ें। मूल समाचार स्रोत और कार्य के संग्रह देखें।'],
+  documents:['आधिकारिक दस्तावेज़','सह्याद्री प्रतिष्ठान के पंजीकरण प्रमाणपत्र और आधिकारिक दस्तावेज़ यहाँ पढ़ें। संस्था के उपलब्ध मूल अभिलेखों की छवियाँ एक ही स्थान पर देखें।'],
+  join:['दुर्ग संरक्षण से जुड़ें','सह्याद्री प्रतिष्ठान के दुर्ग संरक्षण कार्य में भाग लें। सदस्य पंजीकरण, अभियानों की जानकारी और स्वयंसेवक के रूप में अपना समय व कौशल देने के तरीके जानें।']
+ },
+ en:{
+  home:'Home',more:'Explore this section',overview:'Find your connection to the Sahyadris.',
+  founder:['Dr. Shramik Gojamgunde','Meet Dr. Shramik Gojamgunde, founder of Sahyadri Pratishthan, through his work in fort conservation, photography and public education.'],
+  journey:['Our fort conservation journey','Trace Sahyadri Pratishthan’s fort conservation, education and community service through campaign records and photographs from the organisation’s archive.'],
+  about:['Our fort conservation movement','Meet Sahyadri Pratishthan, a volunteer movement caring for Maharashtra’s forts through conservation, clean-ups and heritage awareness. Explore our journey.'],
+  work:['Fort conservation projects','See Sahyadri Pratishthan’s conservation work at Maharashtra’s forts: gateways, cannons, water tanks and volunteer campaigns, documented in photographs.'],
+  stories:['Fort conservation field notes','Read published accounts of Sahyadri Pratishthan’s fort conservation campaigns, study visits and programmes, with links to original news reports.'],
+  documents:['Official documents','Read Sahyadri Pratishthan’s registration certificates and official documents. View images of the organisation’s available original records in one place.'],
+  join:['Volunteer for fort conservation','Join Sahyadri Pratishthan’s fort conservation movement. Find membership registration, campaign information and ways to volunteer your time and skills.']
+ }
 };
 for(const group of catalog){pageDefinitions.push({slug:'archive/'+group.id,sections:['archive_'+group.id]});for(const lang of ['mr','hi','en'])pageText[lang]['archive/'+group.id]=[group.title[lang],group.intro[lang]];}
 export function pageIntro(lang,slug){const text=pageText[lang];const [title,description]=text[slug];return `<section class="page-intro"><div class="container"><nav class="breadcrumbs" aria-label="${text.home}"><a href="${urlFor(lang)}">${text.home}</a><span aria-hidden="true">/</span><span aria-current="page">${title}</span></nav><h1>${title}</h1><p>${description}</p></div></section>`;}
-export function overview(lang){const text=pageText[lang];return `<section class="section container overview"><h2>${text.overview}</h2><div class="overview-links">${['about','stories','documents'].map(slug=>`<a href="${urlFor(lang,slug)}"><h3>${text[slug][0]} <span aria-hidden="true">↗</span></h3><p>${text[slug][1]}</p></a>`).join('')}</div></section>`;}

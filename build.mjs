@@ -1,8 +1,9 @@
+import {sitemapXml} from './seo.mjs';
 import {mkdir,cp,writeFile,rm} from 'node:fs/promises';
 import {content} from './content.mjs';
 import {sections} from './components.mjs';
 import {layout} from './layout.mjs';
-import {pageDefinitions,pageText,urlFor,pageIntro,overview} from './pages.mjs';
+import {pageDefinitions,pageText,urlFor,pageIntro} from './pages.mjs';
 const out=new URL('./dist/',import.meta.url);
 await mkdir(out,{recursive:true});
 // Local review helpers must never enter a deployment artifact.
@@ -18,7 +19,7 @@ await mkdir(new URL('patra-kaksha/',out),{recursive:true});
 await cp(new URL('./letter-editor.html',import.meta.url),new URL('patra-kaksha/index.html',out));
 const urls=[];
 for(const [lang,t] of Object.entries(content)){
- const fragments=sections(lang,t);fragments.overview=()=>overview(lang);
+ const fragments=sections(lang,t);
  for(const page of pageDefinitions){
   const slug=page.slug;
   const pageTitle=slug?`${pageText[lang][slug][0]} | ${t.name}`:t.title;
@@ -33,7 +34,7 @@ for(const [lang,t] of Object.entries(content)){
  }
 }
 await writeFile(new URL('robots.txt',out),'User-agent: *\nAllow: /\nSitemap: https://sahyadripratishthan.com/sitemap.xml\n');
-await writeFile(new URL('sitemap.xml',out),`<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${urls.map(path=>`<url><loc>https://sahyadripratishthan.com${path}</loc></url>`).join('')}</urlset>`);
+await writeFile(new URL('sitemap.xml',out),sitemapXml());
 await writeFile(new URL('CNAME',out),'sahyadripratishthan.com\n');
 await writeFile(new URL('.nojekyll',out),'');
 console.log(`Built ${urls.length} pages across Marathi, Hindi and English.`);

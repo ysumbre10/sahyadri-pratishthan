@@ -1,6 +1,6 @@
 # Sahyadri Pratishthan
 
-A static, multilingual, multipage website with Marathi at `/`, Hindi at `/hi/`, and English at `/en/`. Six pages per language, 18 pages total.
+A static, multilingual, multipage website with Marathi at `/`, Hindi at `/hi/`, and English at `/en/`. Fifteen pages per language, 45 public pages total.
 
 ## Run locally
 
@@ -122,9 +122,9 @@ The rajmudras now use the owner’s supplied images. Built-in image editing remo
 
 ## Storage optimization and source cleanup
 
-All retained local website images use WebP. Project variants use maximum long edges of 1600px (quality 78), 800px (76), and 180px (68). The logo uses lossless WebP at 1024px. Document pages retain their full rendered dimensions and use quality 86. Portraits use 800px WebP; seal cutouts preserve full alpha transparency. Images were decoded and responsive dimensions verified by `scripts/verify-assets.mjs` (optional Sharp dependency via `SHARP_MODULE`).
+The photo collections use WebP; the approved ID-card template uses PNG. Project variants use maximum long edges of 1600px (quality 78), 800px (76), and 180px (68). The logo uses lossless WebP at 1024px. Document pages retain their full rendered dimensions and use quality 86. Portraits use 800px WebP; seal cutouts preserve full alpha transparency. Images were decoded and responsive dimensions verified during the completed migration.
 
-The owner requested deletion of originals after compression. Source ZIPs, PDFs, JPEG/PNG images, redundant rendered pages, research images and large AI PNGs were removed after validating replacements. All 94 unique project photographs and 20 document pages remain. Temporary extracted project images and review sheets were also removed. `output/optimization/report.json` records migration sizes and deleted files. `scripts/optimize-assets.mjs` documents the one-time migration and depends on the original extracted inputs, which are no longer retained. Normal builds need neither Sharp nor the originals.
+The owner requested deletion of originals after compression. Source ZIPs, PDFs, JPEG/PNG images, redundant rendered pages, research images and large AI PNGs were removed after validating replacements. All 94 unique project photographs and 20 document pages remain. Temporary extracted project images and review sheets were also removed. `output/optimization/report.json` records migration sizes and deleted files. The obsolete one-time migration and report-based verification scripts have been removed; their original extracted inputs are no longer retained. Normal builds need neither Sharp nor the originals.
 
 Future document imports initially produce JPEG pages; convert them to WebP and update `documents.json` before publishing. Future photo imports require resupplying originals. Do not recompress the retained WebP files repeatedly. Deploy only `dist/`; its local copy duplicates assets for preview and hosting.
 
@@ -142,4 +142,15 @@ The Join page is available in Marathi, Hindi and English. It presents registrati
 
 `id-card.js` renders the approved orange card at 994 × 1584. Card details come from the lookup result, and photo selection unlocks only after an approved match. The website is typeset in Georgia and Marathi fields in Noto Serif Devanagari. The role is fixed to सभासद. JPG, PNG and WebP photos up to 10 MB and 40 megapixels are downsampled in memory; zoom and position controls crop the portrait. Photos are never uploaded or placed in browser storage. Reset and page exit clear the local data.
 
-`npm run verify` builds and validates all 18 pages. `node --test tests/*.test.mjs` checks lookup gates, ID rendering, photo privacy, registration allocation and retry behavior. These tests simulate Apps Script and the DOM; live browser checks separately verified successful and nonexistent lookup responses. Publish only `dist/` using the existing GitHub Pages workflow.
+`npm run verify` builds and validates all 45 public pages. `node --test tests/*.test.mjs` checks lookup gates, ID rendering, photo privacy, registration allocation and retry behavior. These tests simulate Apps Script and the DOM; live browser checks separately verified successful and nonexistent lookup responses. Publish only `dist/` using the existing GitHub Pages workflow.
+
+
+## Search visibility
+
+`seo.mjs` generates Organization, WebSite, page and visible-breadcrumb structured data, multilingual social metadata, and a sitemap with reciprocal Marathi/Hindi/English alternates. `content.mjs` and `pages.mjs` supply factual, language-specific titles and descriptions. Public pages are indexable; the encrypted letter editor remains unlisted and noindex, and is excluded from the sitemap. Only pages from `pageDefinitions` enter the sitemap.
+
+`npm run verify` checks all public routes, unique metadata within each language, structured data identities, language alternates, internal links, the sitemap and private-editor exclusion. `node --test tests/*.test.mjs letter-editor/*.test.mjs` retains functional and security regression coverage. The obsolete alternate editor server and one-time image migration scripts have been removed; the root development server and current tests remain supported.
+
+Search Console ownership and sitemap submission are separate from hosting. GoDaddy manages the domain; GitHub Pages serves the site. Use the owner's chosen Google account to verify the HTTPS URL-prefix property, submit `https://sahyadripratishthan.com/sitemap.xml`, then inspect the three language homepages and request indexing. Keep the Google-provided verification file deployed after successful verification. Do not fabricate a verification token or publish one for a different account.
+
+Monitor Search Console's Page indexing and Performance reports for branded queries (Sahyadri Pratishthan / सह्याद्री प्रतिष्ठान) and fort-conservation queries. The organisation's own social profiles should link to the canonical website where appropriate. Rankings and indexing cannot be guaranteed; do not add hidden keyword lists, invented endorsements or mass-generated doorway pages. Reference: https://developers.google.com/search/docs/crawling-indexing/ask-google-to-recrawl

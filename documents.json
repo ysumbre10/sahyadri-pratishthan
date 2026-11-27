@@ -12,12 +12,60 @@
       "/assets/document-pages/trust/page-08.webp",
       "/assets/document-pages/trust/page-09.webp",
       "/assets/document-pages/trust/page-10.webp"
+    ],
+    "dimensions": [
+      {
+        "width": 1242,
+        "height": 1755
+      },
+      {
+        "width": 1242,
+        "height": 1755
+      },
+      {
+        "width": 1242,
+        "height": 1755
+      },
+      {
+        "width": 1242,
+        "height": 1755
+      },
+      {
+        "width": 1242,
+        "height": 1755
+      },
+      {
+        "width": 1242,
+        "height": 1755
+      },
+      {
+        "width": 1242,
+        "height": 1755
+      },
+      {
+        "width": 1242,
+        "height": 1755
+      },
+      {
+        "width": 1242,
+        "height": 1755
+      },
+      {
+        "width": 1242,
+        "height": 1755
+      }
     ]
   },
   {
     "id": "pan",
     "pages": [
       "/assets/document-pages/pan/page-1.webp"
+    ],
+    "dimensions": [
+      {
+        "width": 1242,
+        "height": 1755
+      }
     ]
   },
   {
@@ -26,6 +74,20 @@
       "/assets/document-pages/12a/page-1.webp",
       "/assets/document-pages/12a/page-2.webp",
       "/assets/document-pages/12a/page-3.webp"
+    ],
+    "dimensions": [
+      {
+        "width": 1240,
+        "height": 1755
+      },
+      {
+        "width": 1240,
+        "height": 1755
+      },
+      {
+        "width": 1240,
+        "height": 1755
+      }
     ]
   },
   {
@@ -33,12 +95,28 @@
     "pages": [
       "/assets/document-pages/80g/page-1.webp",
       "/assets/document-pages/80g/page-2.webp"
+    ],
+    "dimensions": [
+      {
+        "width": 1240,
+        "height": 1755
+      },
+      {
+        "width": 1240,
+        "height": 1755
+      }
     ]
   },
   {
     "id": "csr",
     "pages": [
       "/assets/document-pages/csr/page-1.webp"
+    ],
+    "dimensions": [
+      {
+        "width": 1275,
+        "height": 1650
+      }
     ]
   },
   {
@@ -46,12 +124,28 @@
     "pages": [
       "/assets/document-pages/darpan/page-1.webp",
       "/assets/document-pages/darpan/page-2.webp"
+    ],
+    "dimensions": [
+      {
+        "width": 1240,
+        "height": 1754
+      },
+      {
+        "width": 1240,
+        "height": 1754
+      }
     ]
   },
   {
     "id": "lei",
     "pages": [
       "/assets/document-pages/lei/page-1.webp"
+    ],
+    "dimensions": [
+      {
+        "width": 1241,
+        "height": 1754
+      }
     ]
   }
 ]

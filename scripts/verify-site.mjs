@@ -9,8 +9,23 @@ const photoCount=projects.reduce((total,project)=>total+project.images.length,0)
 const root=new URL('../dist/',import.meta.url);
 const read=path=>readFile(new URL(path,root),'utf8');
 const routes=new Map();
+const titles=new Set(),descriptions=new Set();
 for(const lang of Object.keys(content))for(const {slug} of pageDefinitions){
  const route=urlFor(lang,slug);const html=await read(route.slice(1)+'index.html');routes.set(route,html);
+ const title=html.match(/<title>(.*?)<\/title>/s)?.[1];
+ const description=html.match(/<meta name="description" content="([^"]*)">/)?.[1];
+ assert(title&&description,`${route}: title and description present`);
+ assert(!titles.has(lang+':'+title)&&!descriptions.has(description),`${route}: unique search metadata`);
+ titles.add(lang+':'+title);descriptions.add(description);
+ assert(html.includes('content="index, follow, max-image-preview:large"'),`${route}: public page indexable`);
+ assert(!/noindex/i.test(html),`${route}: no accidental noindex`);
+ const structured=[...html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)].map(match=>JSON.parse(match[1]));
+ assert.equal(structured.length,1,`${route}: one structured graph`);
+ const graph=structured[0]['@graph'];
+ assert(graph.some(node=>node['@type']==='WebSite'&&node.url==='https://sahyadripratishthan.com/'),`${route}: canonical website identity`);
+ const page=graph.find(node=>node['@id']===`https://sahyadripratishthan.com${route}#webpage`);
+ assert(page&&page.inLanguage===lang,`${route}: page identity and language`);
+ if(slug&&slug!=='founder')assert(graph.some(node=>node['@type']==='BreadcrumbList'&&node.itemListElement.at(-1).item===page.url),`${route}: matching breadcrumb`);
  assert.equal((html.match(/<h1(?:\s|>)/g)||[]).length,1,`${route}: one h1`);
  assert(html.includes(`<html lang="${lang}">`),`${route}: language`);
  assert(html.includes(`<link rel="canonical" href="https://sahyadripratishthan.com${route}">`),`${route}: canonical`);
@@ -44,6 +59,14 @@ for(const document of documents)for(const page of document.pages)await access(ne
 for(const project of projects)for(const image of project.images)for(const size of ['large','card','thumb'])await access(new URL(image[size].slice(1),root));
 const files=await readdir(root,{recursive:true});assert(!files.some(file=>/\.(pdf|zip|heic)$/i.test(file)),'Source archives and documents excluded from deployment');
 const sitemap=await read('sitemap.xml');assert.equal((sitemap.match(/<url>/g)||[]).length,routes.size);
+assert(sitemap.includes('xmlns:xhtml="http://www.w3.org/1999/xhtml"'),'Sitemap language namespace');
+for(const [route] of routes){
+ const entry=sitemap.match(new RegExp(`<url><loc>https://sahyadripratishthan\\.com${route}</loc>(.*?)</url>`))?.[1];
+ assert(entry,`${route}: sitemap entry`);
+ for(const lang of [...Object.keys(content),'x-default'])assert(entry.includes(`hreflang="${lang}"`),`${route}: sitemap alternate ${lang}`);
+}
+assert(!sitemap.includes('patra-kaksha'),'Private editor excluded from sitemap');
+assert((await read('patra-kaksha/index.html')).includes('noindex'),'Private editor remains noindex');
 console.log(`Verified ${routes.size} pages, language routes, metadata, links, exact tagline, document pages, ${projects.length} collections / ${photoCount} photos, and source-file exclusion.`);
 // Every archive account must remain reachable in each language with its photographs.
 const archive=JSON.parse(await readFile(new URL('../archive-catalog.json',import.meta.url),'utf8'));

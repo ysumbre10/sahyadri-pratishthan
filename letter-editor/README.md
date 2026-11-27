@@ -47,7 +47,7 @@ Print / PDF uses the browser print dialog: A4, no margins, browser headers/foote
 
 Browser checks and printed PDF visual review remain pending: local listeners were blocked by the sandbox, file URLs were blocked by browser policy, and the Chrome connector required an app update. Do not describe visual QA as passed.
 
-The earlier `server.mjs`, `password.mjs` and `auth.test.mjs` are an unused alternative server implementation; GitHub Pages does not run them.
+The editor uses only the encrypted GitHub Pages implementation. The unused server-authentication implementation and its login page, password-hashing helper and tests have been removed.
 
 ## Approved 2027 letterhead
 
