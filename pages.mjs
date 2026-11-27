@@ -6,7 +6,7 @@ export const pageDefinitions=[
  {slug:'work',sections:['projectShowcase','join','historicSocials']},
  {slug:'stories',sections:['stories','videoJournal','historicSocials']},
  {slug:'documents',sections:['documents','historicSocials']},
- {slug:'join',sections:['registration','idCard','campaign','faq','historicSocials']}
+ {slug:'join',sections:['registrationChoices','registration','idCard','campaign','faq','historicSocials']}
 ];
 export const urlFor=(lang,slug='')=>`${lang==='mr'?'/':`/${lang}/`}${slug?slug+'/':''}`;
 export const pageText={

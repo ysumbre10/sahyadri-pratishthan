@@ -45,3 +45,22 @@ if(viewer){
  zoom.addEventListener('change',()=>stage.style.setProperty('--document-zoom',`${zoom.value}%`));
  viewer.classList.add('enhanced');viewer.querySelector('.document-controls').hidden=false;render();
 }
+
+// Mobile paths use ordinary anchors so direct links and browser Back still work.
+const joinChoices=document.querySelector('.registration-choices');
+if(joinChoices){
+ const syncJoinPath=()=>{
+  const path=location.hash==='#registration'?'new':location.hash==='#id-card'?'id':'';
+  document.body.dataset.joinPath=path;
+  joinChoices.querySelectorAll('[data-join-choice]').forEach(link=>{
+   if(link.dataset.joinChoice===path)link.setAttribute('aria-current','true');
+   else link.removeAttribute('aria-current');
+  });
+ };
+ syncJoinPath();
+ window.addEventListener('hashchange',syncJoinPath);
+ // Reveal the destination before native anchor scrolling runs.
+ document.querySelectorAll('a[href="#registration"],a[href="#id-card"]').forEach(link=>link.addEventListener('click',()=>{
+  document.body.dataset.joinPath=link.hash==='#id-card'?'id':'new';
+ }));
+}

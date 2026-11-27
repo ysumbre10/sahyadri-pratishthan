@@ -33,3 +33,12 @@ export function registrationSection(lang){
  return `<section id="registration" class="registration-section section" aria-labelledby="registration-title"><div class="container"><div class="registration-grid"><div class="registration-copy"><h2 id="registration-title">${t.title}</h2><p class="registration-intro">${t.intro}</p><a class="button registration-button" href="${registrationFormUrl}" target="_blank" rel="noopener noreferrer" aria-describedby="registration-external">${t.form}</a><p id="registration-external" class="registration-external">${t.external}</p><div class="registration-existing"><p>${existing}</p><a href="#id-card">${create}</a></div></div><ol class="registration-steps">${t.steps.map(([title,description],i)=>`<li><span class="registration-step-number" aria-hidden="true">${new Intl.NumberFormat(lang).format(i+1)}</span><div><h3>${title}</h3><p>${description}</p></div></li>`).join('')}</ol></div><details class="registration-details"><summary>${t.details}</summary><p>${t.detailText}</p></details></div></section>`;
 }
 export function registrationLink(lang){const t=copy[lang];return `<div class="registration-invite"><h3>${t.cta}</h3><p>${t.teaser}</p><a class="button registration-button" href="${lang==='mr'?'':`/${lang}`}/join/#registration">${t.form}</a></div>`;}
+
+export function registrationChoices(lang){
+ const t={
+  mr:['आपल्याला काय करायचे आहे?','आधीच नोंदणी केली आहे','ओळखपत्र डाउनलोड करा','नवीन नोंदणी','दुर्गसेवक म्हणून सहभागी व्हा'],
+  hi:['आप क्या करना चाहते हैं?','पहले से पंजीकृत हैं','पहचान पत्र डाउनलोड करें','नया पंजीकरण','दुर्गसेवक के रूप में जुड़ें'],
+  en:['How would you like to join?','Already registered','Download your ID card','New registration','Join as a Durgsevak']
+ }[lang];
+ return `<nav class="registration-choices container" aria-label="${t[0]}"><h2>${t[0]}</h2><div class="registration-choice-list"><a class="registration-choice" href="#id-card" data-join-choice="id"><strong>${t[1]}</strong><span>${t[2]}</span></a><a class="registration-choice" href="#registration" data-join-choice="new"><strong>${t[3]}</strong><span>${t[4]}</span></a></div></nav>`;
+}

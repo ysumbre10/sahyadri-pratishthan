@@ -66,3 +66,33 @@
 @media(max-width:900px){.id-grid{gap:24px;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr)}.id-preview-stage{padding:20px}.id-workspace{padding:22px}.id-heading{gap:24px}.id-preview{top:108px}.join-page .faq-grid{gap:32px}}
 @media(max-width:760px){.registration-grid,.id-heading,.id-grid,.campaign-grid,.join-page .faq-grid{grid-template-columns:1fr}.registration-grid{gap:36px}.registration-copy h2{max-width:none}.registration-section,.id-generator{scroll-margin-top:95px}.registration-button{max-width:100%;white-space:normal}.registration-steps{padding:24px;background:#f2ebde;border-radius:6px}.registration-steps li:first-child{padding-top:0}.registration-details{margin-top:30px}.id-heading{gap:14px;margin-bottom:26px}.id-preview{position:static;max-width:420px;justify-self:center}.id-preview-stage{padding:24px}.id-fields{gap:12px}.id-actions button{max-width:100%}.campaign-section,.join-page .faq-section{padding-block:56px}.campaign-grid{gap:28px}.join-page .page-intro{padding-block:28px 36px}.join-page .page-intro h1{font-size:clamp(32px,8vw,44px)}.join-page .breadcrumbs{font-size:13px}.join-page .faq-grid summary{font-size:16px}.id-intro,.registration-intro{font-size:16px}.id-workspace{padding:20px}}
 @media(prefers-reduced-motion:reduce){.join-page summary::after{transition:none}}
+/* Source order is lookup, card, photo controls — including keyboard navigation. */
+.id-grid{grid-template-areas:'lookup preview' 'photo preview';row-gap:20px}
+.id-lookup-panel{grid-area:lookup}.id-photo-panel{grid-area:photo}
+.id-grid .id-preview{grid-area:preview}
+.id-grid #member-lookup{margin:0;padding:clamp(20px,3vw,36px);border:1px solid #cec2ac}
+.registration-choices{display:none}
+@media(max-width:760px){
+ .registration-choices{display:block;padding-block:26px}
+ .registration-choices h2{font:600 20px/1.6 var(--body);margin-bottom:16px}
+ .registration-choice-list{display:grid;gap:12px}
+ .registration-choice{display:flex;flex-direction:column;justify-content:center;gap:4px;min-height:88px;padding:16px 20px;border:1px solid #cbbb9e;border-radius:7px;background:var(--paper)}
+ .registration-choice strong{font-size:18px;line-height:1.6}.registration-choice span{font-size:15px;color:var(--muted);line-height:1.6}
+ .registration-choice:first-child{border-left:4px solid var(--join-accent)}
+ .registration-choice[aria-current]{background:#fce9d7;border-color:var(--join-accent)}
+ .registration-choice[aria-current] span{color:#7c350f}
+ .join-page[data-join-path=""] #registration,.join-page[data-join-path=""] #id-card,
+ .join-page[data-join-path="id"] #registration,.join-page[data-join-path="new"] #id-card{display:none}
+ .join-page .registration-section,.join-page .id-generator{padding-block:32px 44px}
+ .id-grid{grid-template-areas:'lookup' 'preview' 'photo';grid-template-columns:minmax(0,1fr);gap:22px}
+ .id-grid #member-lookup{padding:20px}
+ .id-grid .id-preview{position:static;max-width:390px;justify-self:center}
+ .id-preview-stage{padding:18px}.id-preview canvas{width:min(100%,290px)}
+ .id-grid input[type=range]{min-height:44px}
+ .id-actions .button{min-height:54px}
+ .id-photo-panel{min-width:0}
+ .join-page .page-intro{padding-block:20px 26px}
+ .join-page .page-intro h1{font-size:34px}
+ .join-page .page-intro .breadcrumbs{margin-bottom:14px}
+}
+@media(max-width:380px){.id-fields{grid-template-columns:1fr;gap:0}.id-workspace,.id-grid #member-lookup{padding:16px}.registration-choice{padding:14px 16px}}
