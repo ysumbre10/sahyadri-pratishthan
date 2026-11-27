@@ -45,3 +45,19 @@ for(const project of projects)for(const image of project.images)for(const size o
 const files=await readdir(root,{recursive:true});assert(!files.some(file=>/\.(pdf|zip|heic)$/i.test(file)),'Source archives and documents excluded from deployment');
 const sitemap=await read('sitemap.xml');assert.equal((sitemap.match(/<url>/g)||[]).length,routes.size);
 console.log(`Verified ${routes.size} pages, language routes, metadata, links, exact tagline, document pages, ${projects.length} collections / ${photoCount} photos, and source-file exclusion.`);
+// Every archive account must remain reachable in each language with its photographs.
+const archive=JSON.parse(await readFile(new URL('../archive-catalog.json',import.meta.url),'utf8'));
+const archiveImages=JSON.parse(await readFile(new URL('../archive-images.json',import.meta.url),'utf8'));
+for(const group of archive){
+ assert.equal(new Set(group.entries.map(e=>e.id)).size,group.entries.length,`${group.id}: unique account IDs`);
+ for(const lang of Object.keys(content)){
+  const html=routes.get(urlFor(lang,'archive/'+group.id));
+  for(const entry of group.entries){
+   assert(entry.title[lang]&&entry.body[lang],`${group.id}/${entry.id}: ${lang} translation`);
+   assert(![entry.title[lang],entry.body[lang]].some(s=>s.includes('\uFFFD')),`${group.id}/${entry.id}: valid text`);
+   assert(html.includes(`id="${entry.id}"`),`${group.id}/${entry.id}: published account`);
+   for(const name of entry.photos){const im=archiveImages[name];assert(im,`${name}: image provenance`);assert(html.includes(`href="${im.src}"`),`${name}: full-size photograph available`);}
+  }
+ }
+}
+console.log(`Verified ${archive.length} archive collections, ${archive.reduce((n,g)=>n+g.entries.length,0)} detailed accounts and ${Object.keys(archiveImages).length} source photographs.`);

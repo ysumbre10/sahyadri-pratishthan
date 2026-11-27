@@ -1,3 +1,4 @@
+import {archiveCatalog,archiveCollection,archiveDirectory,founderDetailedWork} from './archive.mjs';
 import {founderFeature,founderHero,founderJourney,founderRecords,founderCommunity,founderClosing} from './founder.mjs';
 import {movementJourney,archiveFeature,journeyArchive} from './journey.mjs';
 import {idCardSection} from './id-card.mjs';
@@ -14,6 +15,11 @@ const icon=i=>`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke
 const logo=t=>`<span class="logo-art"><img src="/assets/sp_logo_reg_no.webp" alt="${t.name}" width="3264" height="3264"></span>`;
 
 export function sections(lang,t){return {
+  ...Object.fromEntries(archiveCatalog.map(g=>['archive_'+g.id,()=>archiveCollection(lang,g.id)])),
+  archiveDirectory:()=>archiveDirectory(lang),
+  workArchiveDirectory:()=>archiveDirectory(lang,'work'),
+  activityArchiveDirectory:()=>archiveDirectory(lang,'activities'),
+  founderDetailedWork:()=>founderDetailedWork(lang),
   founderFeature:()=>founderFeature(lang),
   founderHero:()=>founderHero(lang),
   founderJourney:()=>founderJourney(lang),

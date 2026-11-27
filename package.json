@@ -7,7 +7,7 @@
     "build": "node build.mjs",
     "dev": "node server.mjs",
     "start": "node server.mjs",
-    "check": "node --check build.mjs && node --check app.js && node --check content.mjs && node --check components.mjs && node --check layout.mjs && node --check pages.mjs && node --check documents.mjs && node --check server.mjs && node --check projects.mjs && node --check projects.js && node --check heritage.mjs && node --check media.mjs && node --check media.js && node --check registration.mjs && node --check id-card.mjs && node --check id-card.js && node --check founder.mjs && node --check journey.mjs && node --check archive-events.mjs",
+    "check": "node --check build.mjs && node --check app.js && node --check content.mjs && node --check components.mjs && node --check layout.mjs && node --check pages.mjs && node --check documents.mjs && node --check server.mjs && node --check projects.mjs && node --check projects.js && node --check heritage.mjs && node --check media.mjs && node --check media.js && node --check registration.mjs && node --check id-card.mjs && node --check id-card.js && node --check founder.mjs && node --check journey.mjs && node --check archive-events.mjs && node --check archive.mjs",
     "verify": "npm run check && npm run build && node scripts/verify-site.mjs"
   }
 }
