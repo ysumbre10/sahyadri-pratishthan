@@ -31,7 +31,7 @@ export function createEditorServer({passwordHash=process.env.LETTER_PASSWORD_HAS
  if(req.method!=='GET')return reply(405,'Method not allowed');
  if(path==='/style.css')return reply(200,await readFile(new URL('public/style.css',base)),'text/css');
  if(!authenticated){if(path!=='/')return reply(401,'Please sign in');return reply(200,await readFile(new URL('public/login.html',base)),'text/html; charset=utf-8')}
- const files={'/':['public/editor.html','text/html; charset=utf-8'],'/editor.js':['public/editor.js','text/javascript'],'/letterhead.png':['private/letterhead.png','image/png'],'/letterhead.pdf':['private/letterhead.pdf','application/pdf']};
+ const files={'/':['public/editor.html','text/html; charset=utf-8'],'/editor.js':['public/editor.js','text/javascript'],'/pagination.js':['public/pagination.js','text/javascript'],'/letterhead.png':['private/letterhead.png','image/png'],'/letterhead.pdf':['private/letterhead.pdf','application/pdf']};
  if(!files[path])return reply(404,'Not found');const[file,type]=files[path];reply(200,await readFile(new URL(file,base)),type);
  }catch{reply(500,'Unable to complete the request. Please try again.')}});
 }

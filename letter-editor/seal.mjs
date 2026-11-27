@@ -6,9 +6,9 @@ let password='';for await(const chunk of process.stdin)password+=chunk;password=
 if(password.length<20)throw Error('Use a randomly generated password of at least 20 characters.');
 const css=await read('public/style.css');
 const png=(await readFile(new URL('private/letterhead.png',root))).toString('base64');
-let js=(await read('public/editor.js')).replace("bg.src='/letterhead.png'",`bg.src='data:image/png;base64,${png}'`);
+let js=(await read('public/pagination.js'))+'\n'+(await read('public/editor.js')).replace("bg.src='/letterhead.png'",`bg.src='data:image/png;base64,${png}'`);
 js+="\ndocument.getElementById('lock').onclick=()=>location.reload();\n";
-let html=(await read('public/editor.html')).replace('<link rel="stylesheet" href="/style.css">',`<style>${css}</style>`).replace('<script src="/editor.js" defer></script>','').replace('<form action="/logout" method="post"><button class="secondary">बाहेर पडा</button></form>','<button type="button" id="lock" class="secondary">लॉक करा</button>').replace('</html>',`<script>${js}</script></html>`);
+let html=(await read('public/editor.html')).replace('<link rel="stylesheet" href="/style.css">',`<style>${css}</style>`).replace('<script src="/pagination.js" defer></script>','').replace('<script src="/editor.js" defer></script>','').replace('<form action="/logout" method="post"><button class="secondary">बाहेर पडा</button></form>','<button type="button" id="lock" class="secondary">लॉक करा</button>').replace('</html>',`<script>${js}</script></html>`);
 const salt=randomBytes(16),iv=randomBytes(12),iterations=600000,key=pbkdf2Sync(password,salt,iterations,32,'sha256');
 const cipher=createCipheriv('aes-256-gcm',key,iv);
 const plaintext=Buffer.from(JSON.stringify({html}));

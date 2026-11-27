@@ -35,11 +35,13 @@ Share the editor link and password privately. Do not put the password in commit 
 
 ## Editor
 
-Date, incoming/outgoing reference, recipient, subject, salutation, body, closing, signature, name, designation and contact details are editable. Text continues across pages using the supplied letterhead. The closing/signature stay together. PNG/JPEG signatures remain in browser memory. JSON drafts contain text and signature: keep downloaded drafts private.
+Date, incoming/outgoing reference, recipient, subject, salutation, body, closing, signature, name, designation and contact details are editable. Text continues across pages using the supplied letterhead. Page breaks use fixed print dimensions, independent of the phone preview scale. Long tokens split at grapheme boundaries; blank paragraphs remain in the letter. Mobile users have sticky Write/Preview shortcuts and fit-to-screen or full-size previews. The closing/signature stay together. PNG/JPEG signatures remain in browser memory. JSON drafts contain text and signature: keep downloaded drafts private.
 
 Print / PDF uses the browser print dialog: A4, no margins, browser headers/footers off, Save as PDF. Use a system Devanagari font (Kohinoor Devanagari, Noto Sans Devanagari or Mangal). No third-party scripts, fonts or upload services are used.
 
 ## Validation
+
+`node --test letter-editor/pagination.test.mjs` covers overflow, exact page boundaries, long unbroken strings, Marathi grapheme boundaries and blank paragraphs with a deterministic layout adapter. It does not replace browser layout QA.
 
 `npm run verify` validates the public site build. `node --test letter-editor/encryption.test.mjs` verifies browser-compatible Web Crypto decryption, wrong-password rejection, and exclusion of the password, plain template and sitemap link from deployed files. The tests require ignored owner assets locally; normal GitHub Pages builds need only the already encrypted standalone page.
 
