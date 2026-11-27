@@ -11,7 +11,7 @@ function render(){
   content=document.createElement('div');content.className='letter-content';content.style.fontSize=$('size').value+'px';
   sheet.append(bg,content);frame.append(sheet);$('pages').append(frame);
  }
- const fits=()=>content.scrollHeight<=content.clientHeight;
+ const fits=()=>content.scrollHeight<=content.clientHeight&&content.scrollWidth<=content.clientWidth;
  newPage();
  function text(value,bold=false){
   let p;
@@ -49,16 +49,23 @@ function render(){
  const sheets=[...document.querySelectorAll('.sheet')];
  sheets.forEach((sheet,i)=>{sheet.setAttribute('aria-label',`पान ${i+1}`);const n=document.createElement('span');n.className='page-label';n.textContent=`${i+1} / ${sheets.length}`;sheet.append(n)});
  $('page-count').textContent=`${sheets.length} पाने`;
- $('mobile-page-count').textContent=`पूर्वावलोकन (${sheets.length})`;
+ $('mobile-page-count').textContent=`पूर्वावलोकन पहा (${sheets.length} पाने)`;
+ $('text-count').textContent=`${$('body').value.length.toLocaleString('mr-IN')} / ५०,००० अक्षरे`;
+ for(const area of document.querySelectorAll('.letter-content'))if(area.scrollHeight>area.clientHeight||area.scrollWidth>area.clientWidth)throw new Error('मजकूर सुरक्षित जागेबाहेर आहे. अक्षर आकार कमी करा.');
  scale();
 }
-function update(){try{render();$('status').textContent='';$('print').disabled=false}catch(e){$('status').textContent=e.message;$('print').disabled=true}}
+function update(){try{syncSignature();render();$('status').textContent='';$('print').disabled=false}catch(e){$('status').textContent=e.message;$('print').disabled=true}}
+function syncSignature(){
+ $('signature-preview').hidden=!signature;$('remove-signature').disabled=!signature;
+ if(signature)$('signature-thumbnail').src=signature;else $('signature-thumbnail').removeAttribute('src');
+}
 function scale(){
  const width=$('pages').clientWidth;
  const ratio=$('preview-size').value==='actual'?1:Math.min(1,width/794);
  document.querySelectorAll('.sheet-frame').forEach(frame=>{frame.style.width=(794*ratio)+'px';frame.style.height=(1123*ratio)+'px';frame.firstElementChild.style.transform=`scale(${ratio})`});
 }
 $('preview-size').addEventListener('change',scale);
+$('jump').onchange=()=>{const value=$('jump').value;if(value==='preview')$('show-preview').click();if(value==='fields')$('show-fields').click();$('jump').value=''};
 $('show-preview').onclick=()=>{clearTimeout(timer);update();$('preview').scrollIntoView({block:'start'});$('preview-title').focus({preventScroll:true})};
 $('show-fields').onclick=()=>{$('fields').scrollIntoView({block:'start'});$('fields-title').focus({preventScroll:true})};
 $('fields').addEventListener('submit',e=>e.preventDefault());$('fields').addEventListener('input',e=>{if(e.target.type==='file')return;clearTimeout(timer);timer=setTimeout(update,120)});window.addEventListener('resize',scale);

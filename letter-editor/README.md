@@ -48,3 +48,9 @@ Print / PDF uses the browser print dialog: A4, no margins, browser headers/foote
 Browser checks and printed PDF visual review remain pending: local listeners were blocked by the sandbox, file URLs were blocked by browser policy, and the Chrome connector required an app update. Do not describe visual QA as passed.
 
 The earlier `server.mjs`, `password.mjs` and `auth.test.mjs` are an unused alternative server implementation; GitHub Pages does not run them.
+
+## Approved 2027 letterhead
+
+The local version uses `Downloads/sp_letterHead2027.pdf`. The prior source and PNG are backed up inside ignored `private/`. At a 794 × 1123 CSS-pixel A4 layout, the safe writing rectangle is x=56, y=346, width=682, height=704: below the orange header, with a clear bottom margin. The same rectangle is used on every page and in print. A final horizontal/vertical overflow check disables printing if layout cannot fit. All editor fields are single-column, including on phones.
+
+Run `npm run build`, then `node letter-editor/preview.mjs` to prepare an additional local 390px phone-width preview. The regular build deletes this preview-only route before packaging. Preview URLs are printed by the helper. The desktop preview was opened and unlocked successfully in Chrome. Further browser input QA was interrupted when the user switched to another Chrome window; do not claim long-letter visual or print QA is complete. The owner reviewed the preview and authorized commit, push and deployment on 27 November 2026.

@@ -1,2 +1,43 @@
-<!doctype html><html lang="mr"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>पत्रलेखन | सह्याद्री प्रतिष्ठान</title><link rel="stylesheet" href="/style.css"><script src="/pagination.js" defer></script><script src="/editor.js" defer></script><header><div><p class="brand">सह्याद्री प्रतिष्ठान</p><h1>पत्रलेखन कक्ष</h1></div><form action="/logout" method="post"><button class="secondary">बाहेर पडा</button></form></header><nav class="mobile-tools" aria-label="पत्र संपादन"><button id="show-fields" type="button" class="secondary">मजकूर लिहा</button><button id="show-preview" type="button"><span id="mobile-page-count">पूर्वावलोकन</span></button></nav><main class="workspace"><form id="fields" class="controls"><h2 id="fields-title" tabindex="-1">पत्राचा तपशील</h2><div class="row"><label>दिनांक<input id="date" type="date" required></label><label>क्रमांक प्रकार<select id="kind"><option>जावक क्र.</option><option>आवक क्र.</option></select></label></div><label>आवक / जावक क्रमांक<input id="number" maxlength="180" placeholder="SPH037 / २०२६"></label><label>प्रति<textarea id="recipient" rows="4" placeholder="नाव, पद व पत्ता" maxlength="2000"></textarea></label><label>विषय<textarea id="subject" rows="2" maxlength="1500"></textarea></label><label>संबोधन<input id="salutation" value="मा. महोदय," maxlength="200"></label><label>पत्राचा मजकूर<span class="field-help">पान भरल्यावर पुढील पान आपोआप जोडले जाईल.</span><textarea id="body" rows="10" maxlength="50000" placeholder="येथे पत्राचा मजकूर लिहा. नवीन परिच्छेदासाठी Enter दाबा."></textarea></label><label>समारोप<textarea id="closing" rows="2" maxlength="1000">कळावे. धन्यवाद!
-आपला विश्वासू,</textarea></label><h2>स्वाक्षरी व संपर्क</h2><label>स्वाक्षरी अपलोड करा (PNG / JPG, कमाल 2 MB)<input id="signature" type="file" accept="image/png,image/jpeg"></label><button id="remove-signature" type="button" class="secondary">स्वाक्षरी काढा</button><label>नाव<input id="name" maxlength="200"></label><label>पद / संस्था<textarea id="designation" rows="2" maxlength="400"></textarea></label><label>फोन / ईमेल<input id="contact" maxlength="250"></label><label>अक्षर आकार<select id="size"><option value="16">सामान्य</option><option value="15">लहान</option><option value="18">मोठा</option></select></label><div class="actions"><button type="button" id="print">प्रिंट / PDF सेव्ह करा</button><button type="button" id="save" class="secondary">मसुदा डाउनलोड करा</button><label class="draft-label">मसुदा उघडा<input type="file" id="load" accept="application/json,.json"></label></div><p>PDF साठी प्रिंट विंडोमध्ये “Save as PDF” निवडा. Paper: A4, Margins: None, Headers and footers: Off.</p><p>मजकूर व स्वाक्षरी या टॅबमध्येच राहतात. काम पुढे सुरू ठेवण्यासाठी मसुदा डाउनलोड करा.</p><p id="status" role="status" aria-live="polite"></p></form><section id="preview" class="preview" aria-label="पत्राचे पूर्वावलोकन"><div class="preview-heading"><h2 id="preview-title" tabindex="-1">पूर्वावलोकन</h2><span id="page-count" aria-live="polite"></span></div><label class="preview-size">पानाचा आकार<select id="preview-size"><option value="fit">स्क्रीनमध्ये बसवा</option><option value="actual">पूर्ण आकार (100%)</option></select></label><div id="pages"></div></section></main></html>
+<!doctype html>
+<html lang="mr">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>पत्रलेखन | सह्याद्री प्रतिष्ठान</title>
+<link rel="stylesheet" href="/style.css">
+<script src="/pagination.js" defer></script>
+<script src="/editor.js" defer></script>
+<header><div><p class="brand">सह्याद्री प्रतिष्ठान हिंदुस्थान</p><h1>पत्रलेखन कक्ष</h1></div><form action="/logout" method="post"><button class="secondary">बाहेर पडा</button></form></header>
+<nav class="mobile-tools" aria-label="पत्र संपादन"><label class="sr-only" for="jump">विभाग निवडा</label><select id="jump"><option value="">विभाग निवडा</option><option value="fields">पत्र लिहा</option><option value="preview" id="mobile-page-count">पूर्वावलोकन पहा</option></select></nav>
+<main class="workspace">
+<form id="fields" class="controls">
+<div class="editor-intro"><h2 id="fields-title" tabindex="-1">आपले पत्र तयार करा</h2><p>माहिती भरा. पत्राचे पूर्वावलोकन आपोआप तयार होईल.</p></div>
+<fieldset><legend>पत्राचा तपशील</legend>
+<label for="date">दिनांक</label><input id="date" type="date" required>
+<label for="kind">क्रमांक प्रकार</label><select id="kind"><option>जावक क्र.</option><option>आवक क्र.</option></select>
+<label for="number">आवक / जावक क्रमांक</label><input id="number" maxlength="180" placeholder="उदा. SPH037 / २०२७">
+<label for="recipient">प्रति</label><span class="field-help" id="recipient-help">प्राप्तकर्त्याचे नाव, पद व पत्ता — प्रत्येक माहिती नवीन ओळीवर लिहा.</span><textarea id="recipient" rows="4" maxlength="2000" aria-describedby="recipient-help" placeholder="नाव&#10;पद&#10;पत्ता"></textarea>
+</fieldset>
+<fieldset><legend>पत्राचा मजकूर</legend>
+<label for="subject">विषय</label><textarea id="subject" rows="3" maxlength="1500" placeholder="पत्राचा विषय लिहा"></textarea>
+<label for="salutation">संबोधन</label><input id="salutation" value="मा. महोदय," maxlength="200">
+<label for="body">मुख्य मजकूर</label><span class="field-help" id="body-help">नवीन परिच्छेदासाठी Enter दाबा. पान भरल्यावर पुढील लेटरहेड पान आपोआप जोडले जाईल.</span><textarea id="body" rows="12" maxlength="50000" aria-describedby="body-help" placeholder="येथे पत्राचा मजकूर लिहा…"></textarea><p class="text-count" id="text-count"></p>
+<label for="closing">समारोप</label><textarea id="closing" rows="3" maxlength="1000">कळावे. धन्यवाद!
+आपला विश्वासू,</textarea>
+</fieldset>
+<fieldset><legend>स्वाक्षरी व संपर्क</legend>
+<label for="signature">स्वाक्षरी अपलोड करा</label><span class="field-help" id="signature-help">PNG किंवा JPG • कमाल 2 MB. स्वच्छ किंवा पारदर्शक पार्श्वभूमीची प्रत वापरा.</span><input id="signature" type="file" accept="image/png,image/jpeg" aria-describedby="signature-help"><div class="signature-upload-preview" id="signature-preview" hidden><img id="signature-thumbnail" alt="अपलोड केलेली स्वाक्षरी"></div><button id="remove-signature" type="button" class="secondary" disabled>स्वाक्षरी काढा</button>
+<label for="name">स्वाक्षरी करणाऱ्याचे नाव</label><input id="name" maxlength="200" placeholder="संपूर्ण नाव">
+<label for="designation">पद / संस्था</label><textarea id="designation" rows="3" maxlength="400" placeholder="पद&#10;संस्थेचे नाव"></textarea>
+<label for="contact">फोन / ईमेल</label><input id="contact" maxlength="250" placeholder="संपर्क माहिती">
+</fieldset>
+<fieldset><legend>अक्षर आकार व जतन</legend>
+<label for="size">पत्रातील अक्षर आकार</label><select id="size"><option value="16">सामान्य</option><option value="15">लहान</option><option value="18">मोठा</option></select>
+<div class="actions"><button type="button" id="show-preview">पूर्वावलोकन पहा</button><button type="button" id="print">प्रिंट / PDF सेव्ह करा</button><button type="button" id="save" class="secondary">मसुदा डाउनलोड करा</button></div>
+<label for="load">जतन केलेला मसुदा उघडा</label><input type="file" id="load" accept="application/json,.json">
+<p class="field-help">PDF साठी प्रिंट विंडोमध्ये “Save as PDF” निवडा. A4 कागद, Margins: None आणि Headers and footers: Off ठेवा.</p>
+<p class="privacy-note">मजकूर व स्वाक्षरी या टॅबमध्येच राहतात. टॅब बंद करण्यापूर्वी मसुदा डाउनलोड करा.</p>
+</fieldset><p id="status" role="status" aria-live="polite"></p>
+</form>
+<section id="preview" class="preview" aria-label="पत्राचे पूर्वावलोकन"><div class="preview-toolbar"><h2 id="preview-title" tabindex="-1">पत्राचे पूर्वावलोकन</h2><span id="page-count" aria-live="polite"></span><p class="preview-note">मजकूर शीर्षकाखालील सुरक्षित जागेत ठेवला जातो. अतिरिक्त पाने आपोआप जोडली जातात.</p><label for="preview-size">पानाचा आकार</label><select id="preview-size"><option value="fit">स्क्रीनमध्ये बसवा</option><option value="actual">पूर्ण आकार (100%)</option></select><button type="button" id="show-fields" class="secondary">मजकूर संपादित करा</button></div><div id="pages"></div></section>
+</main></html>

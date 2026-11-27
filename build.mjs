@@ -5,6 +5,8 @@ import {layout} from './layout.mjs';
 import {pageDefinitions,pageText,urlFor,pageIntro,overview} from './pages.mjs';
 const out=new URL('./dist/',import.meta.url);
 await mkdir(out,{recursive:true});
+// Local review helpers must never enter a deployment artifact.
+await rm(new URL('__letter-preview-phone/',out),{recursive:true,force:true});
 // Only explicitly selected public assets enter the deployable site.
 await rm(new URL('assets/',out),{recursive:true,force:true});
 await mkdir(new URL('assets/',out),{recursive:true});
