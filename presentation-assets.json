@@ -1,0 +1,135 @@
+[
+  {
+    "name": "founder",
+    "slide": 4,
+    "source": "image5.png",
+    "width": 655,
+    "height": 547
+  },
+  {
+    "name": "speech",
+    "slide": 11,
+    "source": "image9.jpeg",
+    "width": 960,
+    "height": 689
+  },
+  {
+    "name": "exhibition",
+    "slide": 14,
+    "source": "image22.jpeg",
+    "width": 990,
+    "height": 566
+  },
+  {
+    "name": "tung",
+    "slide": 19,
+    "source": "image31.png",
+    "width": 901,
+    "height": 456
+  },
+  {
+    "name": "tung-work",
+    "slide": 22,
+    "source": "image40.jpeg",
+    "width": 399,
+    "height": 532
+  },
+  {
+    "name": "tung-wall",
+    "slide": 22,
+    "source": "image41.jpeg",
+    "width": 715,
+    "height": 536
+  },
+  {
+    "name": "tung-gate",
+    "slide": 26,
+    "source": "image48.png",
+    "width": 719,
+    "height": 524
+  },
+  {
+    "name": "torna-gate",
+    "slide": 31,
+    "source": "image65.jpeg",
+    "width": 720,
+    "height": 900
+  },
+  {
+    "name": "kulaba",
+    "slide": 45,
+    "source": "image99.jpeg",
+    "width": 720,
+    "height": 376
+  },
+  {
+    "name": "padmadurg-work",
+    "slide": 51,
+    "source": "image123.jpeg",
+    "width": 960,
+    "height": 480
+  },
+  {
+    "name": "padmadurg-cannon",
+    "slide": 51,
+    "source": "image125.jpeg",
+    "width": 448,
+    "height": 252
+  },
+  {
+    "name": "plantation",
+    "slide": 90,
+    "source": "image233.jpeg",
+    "width": 826,
+    "height": 960
+  },
+  {
+    "name": "plantation-team",
+    "slide": 90,
+    "source": "image234.jpeg",
+    "width": 720,
+    "height": 480
+  },
+  {
+    "name": "veterans",
+    "slide": 97,
+    "source": "image259.jpeg",
+    "width": 720,
+    "height": 540
+  },
+  {
+    "name": "youth-camp",
+    "slide": 98,
+    "source": "image264.jpeg",
+    "width": 720,
+    "height": 480
+  },
+  {
+    "name": "advocacy",
+    "slide": 107,
+    "source": "image299.jpeg",
+    "width": 776,
+    "height": 582
+  },
+  {
+    "name": "mission-certificate",
+    "slide": 116,
+    "source": "image336.png",
+    "width": 499,
+    "height": 720
+  },
+  {
+    "name": "photography-certificate",
+    "slide": 119,
+    "source": "image346.png",
+    "width": 909,
+    "height": 1187
+  },
+  {
+    "name": "team",
+    "slide": 124,
+    "source": "image357.jpeg",
+    "width": 960,
+    "height": 720
+  }
+]

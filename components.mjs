@@ -1,3 +1,5 @@
+import {founderFeature,founderHero,founderJourney,founderRecords,founderCommunity,founderClosing} from './founder.mjs';
+import {movementJourney,archiveFeature,journeyArchive} from './journey.mjs';
 import {idCardSection} from './id-card.mjs';
 import {registrationSection,registrationLink,registrationChoices} from './registration.mjs';
 import {heritageHero,inspiration,fieldStories,research,fortCare} from './heritage.mjs';
@@ -12,6 +14,16 @@ const icon=i=>`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke
 const logo=t=>`<span class="logo-art"><img src="/assets/sp_logo_reg_no.webp" alt="${t.name}" width="3264" height="3264"></span>`;
 
 export function sections(lang,t){return {
+  founderFeature:()=>founderFeature(lang),
+  founderHero:()=>founderHero(lang),
+  founderJourney:()=>founderJourney(lang),
+  founderRecords:()=>founderRecords(lang),
+  founderCommunity:()=>founderCommunity(lang),
+  founderClosing:()=>founderClosing(lang),
+  movementJourney:()=>movementJourney(lang),
+  archiveFeature:()=>archiveFeature(lang),
+  journeyArchive:()=>journeyArchive(lang),
+
   campaign:()=>`<section class="campaign-section" aria-labelledby="campaign-title"><div class="container campaign-grid"><div class="campaign-copy"><h2 id="campaign-title">${{mr:'पुढच्या मोहिमेत सहभागी व्हा',hi:'अगले अभियान में शामिल हों',en:'See you at the next fort.'}[lang]}</h2><p>${t.joinText}</p><a class="button" href="${links.whatsapp}" ${ext}>${t.joinCta}</a></div><ol class="campaign-steps">${t.steps.map(([h,p],i)=>`<li><span aria-hidden="true">${new Intl.NumberFormat(lang).format(i+1)}</span><div><h3>${h}</h3><p>${p}</p></div></li>`).join('')}</ol></div></section>`,
   idCard:()=>idCardSection(lang),
   registrationChoices:()=>registrationChoices(lang),
