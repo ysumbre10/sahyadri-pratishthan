@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 340" fill="none">
+  <defs>
+    <linearGradient id="cloth" x1="63" y1="48" x2="220" y2="173" gradientUnits="userSpaceOnUse"><stop stop-color="#ffad32"/><stop offset=".45" stop-color="#ed7218"/><stop offset="1" stop-color="#c94c0a"/></linearGradient>
+    <linearGradient id="pole" x1="55" x2="63" y1="30" y2="30" gradientUnits="userSpaceOnUse"><stop stop-color="#785225"/><stop offset=".5" stop-color="#d4ac67"/><stop offset="1" stop-color="#8c612c"/></linearGradient>
+  </defs>
+  <path d="M59 15 64 30 59 43 54 30Z" fill="#b58b45"/>
+  <path d="M63 51C98 27 124 65 157 54c22-7 40-6 63-1l-51 55 45 55c-23-6-41-7-62 1-33 12-57-25-89-4Z" fill="url(#cloth)"/>
+  <path d="M63 51c23-16 43-4 62 3v108c-20-8-39-16-62-2Z" fill="#ffac35" opacity=".22"/>
+  <path d="M125 54c12 4 22 3 32 0l-5 110c-10 4-18 1-27-2Z" fill="#a83c07" opacity=".14"/>
+  <path d="M65 54c33-21 58 15 92 4 20-7 37-6 55-3" stroke="#ffc56b" stroke-width="2" opacity=".7"/>
+  <rect x="55" y="37" width="8" height="267" rx="3" fill="url(#pole)"/>
+  <path d="M43 306h33M36 313h47" stroke="#aa813c" stroke-width="3" stroke-linecap="round"/>
+</svg>
