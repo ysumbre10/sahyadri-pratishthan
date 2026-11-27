@@ -12,7 +12,7 @@ document.getElementById('unlock').addEventListener('submit',async event=>{
  const payload=JSON.parse(new TextDecoder().decode(plaintext));input.value='';
  // Opaque-origin sandbox isolates the decrypted document from the public website.
  const frame=document.createElement('iframe');frame.title='सह्याद्री पत्रलेखन';frame.setAttribute('sandbox','allow-scripts allow-modals allow-downloads');
- const csp="<meta http-equiv=\"Content-Security-Policy\" content=\"default-src 'none'; img-src data: blob:; style-src 'unsafe-inline'; script-src 'unsafe-inline'; connect-src 'none'; base-uri 'none'; form-action 'none'\">";
+ const csp="<meta http-equiv=\"Content-Security-Policy\" content=\"default-src 'none'; img-src data: blob:; font-src data: blob:; style-src 'unsafe-inline'; script-src 'unsafe-inline'; connect-src 'none'; base-uri 'none'; form-action 'none'\">";
  const html=payload.html.replace('<meta charset="utf-8">','<meta charset="utf-8">'+csp).replace("document.getElementById('lock').onclick=()=>location.reload();","document.getElementById('lock').onclick=()=>parent.postMessage('lock-letter-editor','*');");
  currentURL=URL.createObjectURL(new Blob([html],{type:'text/html'}));frame.src=currentURL;document.body.replaceChildren(frame);
  window.addEventListener('message',event=>{if(event.source===frame.contentWindow&&event.data==='lock-letter-editor'){URL.revokeObjectURL(currentURL);location.reload()}});

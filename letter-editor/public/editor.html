@@ -5,13 +5,25 @@
 <meta name="robots" content="noindex,nofollow">
 <title>पत्रलेखन | सह्याद्री प्रतिष्ठान</title>
 <link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="/fonts.css">
+<script src="/fonts.js" defer></script>
+<script src="/typography.js" defer></script>
+<script src="/formatting.js" defer></script>
 <script src="/pagination.js" defer></script>
 <script src="/editor.js" defer></script>
-<header><div><p class="brand">सह्याद्री प्रतिष्ठान हिंदुस्थान</p><h1>पत्रलेखन कक्ष</h1></div><form action="/logout" method="post"><button class="secondary">बाहेर पडा</button></form></header>
+<header><div><p class="brand">सह्याद्री प्रतिष्ठान हिंदुस्थान</p><h1>पत्रलेखन कक्ष</h1></div><button type="button" id="lock" class="secondary">लॉक करा</button></header>
 <nav class="mobile-tools" aria-label="पत्र संपादन"><label class="sr-only" for="jump">विभाग निवडा</label><select id="jump"><option value="">विभाग निवडा</option><option value="fields">पत्र लिहा</option><option value="preview" id="mobile-page-count">पूर्वावलोकन पहा</option></select></nav>
 <main class="workspace">
 <form id="fields" class="controls">
 <div class="editor-intro"><h2 id="fields-title" tabindex="-1">आपले पत्र तयार करा</h2><p>माहिती भरा. पत्राचे पूर्वावलोकन आपोआप तयार होईल.</p></div>
+<fieldset class="global-format"><legend>संपूर्ण पत्राची अक्षररचना</legend>
+<p class="field-help">येथून सर्व भागांचा फॉन्ट व आकार बदला. प्रत्येक मजकूर भागाखाली स्वतंत्र अक्षररचना उपलब्ध आहे.</p>
+<label for="all-font">मराठी फॉन्ट</label><select id="all-font"></select>
+<label for="all-size">अक्षर आकार (pt)</label><input id="all-size" type="number" min="9" max="24" step="0.5" value="12" inputmode="decimal">
+<label for="all-line">ओळींमधील अंतर</label><select id="all-line"><option value="1.4">1.4</option><option value="1.5">1.5</option><option value="1.7" selected>1.7</option><option value="1.8">1.8</option><option value="2">2.0</option></select>
+<button id="apply-all" type="button" class="secondary">सर्व भागांना लागू करा</button>
+<details class="custom-font-panel"><summary>माझा ISM / Unicode फॉन्ट वापरा</summary><p class="field-help">ISM मध्ये Unicode पद्धतीने टाइप केलेला मराठी मजकूर वापरता येतो. जुना legacy मजकूर आधी Unicode मध्ये रूपांतरित करा.</p><label for="custom-font">आपला देवनागरी फॉन्ट (TTF / OTF, कमाल 2 MB)</label><input id="custom-font" type="file" accept=".ttf,.otf"><p class="field-help">हा फॉन्ट फक्त या टॅबमध्ये वापरला जाईल व डाउनलोड केलेल्या मसुद्यात जतन होईल. निवडक फॉन्टमध्ये ठळक किंवा तिरपे रूप ब्राउझर तयार करतो.</p><p id="font-message" role="status" aria-live="polite"></p></details>
+</fieldset>
 <fieldset><legend>पत्राचा तपशील</legend>
 <label for="date">दिनांक</label><input id="date" type="date" required>
 <label for="kind">क्रमांक प्रकार</label><select id="kind"><option>जावक क्र.</option><option>आवक क्र.</option></select>
@@ -31,8 +43,7 @@
 <label for="designation">पद / संस्था</label><textarea id="designation" rows="3" maxlength="400" placeholder="पद&#10;संस्थेचे नाव"></textarea>
 <label for="contact">फोन / ईमेल</label><input id="contact" maxlength="250" placeholder="संपर्क माहिती">
 </fieldset>
-<fieldset><legend>अक्षर आकार व जतन</legend>
-<label for="size">पत्रातील अक्षर आकार</label><select id="size"><option value="16">सामान्य</option><option value="15">लहान</option><option value="18">मोठा</option></select>
+<fieldset><legend>पूर्वावलोकन व जतन</legend>
 <div class="actions"><button type="button" id="show-preview">पूर्वावलोकन पहा</button><button type="button" id="print">प्रिंट / PDF सेव्ह करा</button><button type="button" id="save" class="secondary">मसुदा डाउनलोड करा</button></div>
 <label for="load">जतन केलेला मसुदा उघडा</label><input type="file" id="load" accept="application/json,.json">
 <p class="field-help">PDF साठी प्रिंट विंडोमध्ये “Save as PDF” निवडा. A4 कागद, Margins: None आणि Headers and footers: Off ठेवा.</p>
