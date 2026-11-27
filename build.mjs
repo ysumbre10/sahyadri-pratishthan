@@ -35,6 +35,8 @@ for(const [lang,t] of Object.entries(content)){
 }
 await writeFile(new URL('robots.txt',out),'User-agent: *\nAllow: /\nSitemap: https://sahyadripratishthan.com/sitemap.xml\n');
 await writeFile(new URL('sitemap.xml',out),sitemapXml());
+// Retain Google's ownership proof for the organisation's Search Console account.
+await cp(new URL('googlea36b97a75caa8bc6.html',import.meta.url),new URL('googlea36b97a75caa8bc6.html',out));
 await writeFile(new URL('CNAME',out),'sahyadripratishthan.com\n');
 await writeFile(new URL('.nojekyll',out),'');
 console.log(`Built ${urls.length} pages across Marathi, Hindi and English.`);
