@@ -7,3 +7,6 @@ node_modules/
 !.env.example
 *.pem
 output/optimization/
+
+# Private letterhead assets: provision directly to the editor host.
+letter-editor/private/

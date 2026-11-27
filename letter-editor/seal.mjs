@@ -1,0 +1,24 @@
+import {readFile,writeFile,mkdir} from 'node:fs/promises';
+import {randomBytes,pbkdf2Sync,createCipheriv,createDecipheriv} from 'node:crypto';
+const root=new URL('./',import.meta.url);
+const read=name=>readFile(new URL(name,root),'utf8');
+let password='';for await(const chunk of process.stdin)password+=chunk;password=password.trim();
+if(password.length<20)throw Error('Use a randomly generated password of at least 20 characters.');
+const css=await read('public/style.css');
+const png=(await readFile(new URL('private/letterhead.png',root))).toString('base64');
+let js=(await read('public/editor.js')).replace("bg.src='/letterhead.png'",`bg.src='data:image/png;base64,${png}'`);
+js+="\ndocument.getElementById('lock').onclick=()=>location.reload();\n";
+let html=(await read('public/editor.html')).replace('<link rel="stylesheet" href="/style.css">',`<style>${css}</style>`).replace('<script src="/editor.js" defer></script>','').replace('<form action="/logout" method="post"><button class="secondary">बाहेर पडा</button></form>','<button type="button" id="lock" class="secondary">लॉक करा</button>').replace('</html>',`<script>${js}</script></html>`);
+const salt=randomBytes(16),iv=randomBytes(12),iterations=600000,key=pbkdf2Sync(password,salt,iterations,32,'sha256');
+const cipher=createCipheriv('aes-256-gcm',key,iv);
+const plaintext=Buffer.from(JSON.stringify({html}));
+const ciphertext=Buffer.concat([cipher.update(plaintext),cipher.final(),cipher.getAuthTag()]);
+const envelope={version:1,iterations,salt:salt.toString('base64'),iv:iv.toString('base64'),ciphertext:ciphertext.toString('base64')};
+// Verify the produced envelope before replacing the deployable file.
+const decipher=createDecipheriv('aes-256-gcm',key,iv);decipher.setAuthTag(ciphertext.subarray(-16));
+if(!Buffer.concat([decipher.update(ciphertext.subarray(0,-16)),decipher.final()]).equals(plaintext))throw Error('Encryption verification failed');
+await mkdir(new URL('static/',root),{recursive:true});await writeFile(new URL('static/sealed.json',root),JSON.stringify(envelope));
+const unlock=(await read('static/unlock.js')).replace("const response=await fetch('./sealed.json',{cache:'no-store'});if(!response.ok)throw Error('network');const envelope=await response.json();",'const envelope='+JSON.stringify(envelope)+';');
+const standalone=(await read('static/index.html')).replace('<script src="unlock.js" defer></script>','').replace('</body>', '<script>'+unlock+'</script></body>');
+await writeFile(new URL('../letter-editor.html',root),standalone);
+console.log('Encrypted standalone editor saved; password is not included.');
