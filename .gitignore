@@ -10,3 +10,4 @@ output/optimization/
 
 # Private letterhead assets: provision directly to the editor host.
 letter-editor/private/
+letter-editor/static/sealed.json
