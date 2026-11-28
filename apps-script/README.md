@@ -28,3 +28,18 @@ Unique new submissions receive an unused number above 5000. Exact existing submi
 Existing Master contains 19,558 records. 2,311 have a card-data review marker and 185 have an identity review marker (these categories can overlap). Do not clear these markers without supporting evidence.
 
 Run `node --test tests/member-service.test.mjs tests/id-card.test.mjs` and `npm run verify` for local validation. No production test registration is inserted by these tests.
+
+
+## Member corrections v2 — prepared 28 November 2026
+
+Local implementation adds `contactLookup` (registered mobile or email), `requestCode`, `verifyCode`, `requestNewEmailCode`, and `saveProfile`. The old mobile+DOB lookup remains for compatibility during rollout. Only corrections send email. Email OTP expires after 10 minutes and five attempts; member-bound sessions expire after 15 minutes. New email addresses require separate verification. No photos are transmitted.
+
+Editable fields: full and component names, DOB, mobile, email, gender, blood group, village, taluka, district, residence, state, occupation, marital status and education. Numbers, member IDs, source data and review markers are not editable. A changed phone removes old login aliases; their values stay in the private audit. Shared/duplicate contacts require organiser review.
+
+`Master!AH:AN` holds correction count, last correction, next eligibility, changed fields, old values, new values and transaction ID. `Member corrections` records history. One save is permitted every 12 calendar months per stable member ID; February 29 anniversaries use February 28. No-op requests do not consume the allowance. A script lock serializes writes, an audit entry is written before the master change, and retrying the same verified transaction repairs an interrupted audit completion without another edit. A pending write without a matching master transaction requires organiser review. Original registration numbers remain unchanged.
+
+Email delivery is capped at 80 requests per day globally and five per destination, with a 60-second resend gap, plus Google's remaining email quota. Support: info.sahyadripratishthan@gmail.com.
+
+Before release: update the existing Apps Script project with Code.gs, run `authorizeMemberEmail` under the owner account (Google will require the new send-email permission), update the existing deployment to a new version, verify `/exec` version 2 and a controlled email flow. Publish the frontend only after the backend is updated. Do not change live member details for testing. Do not claim live rollout until authorization and deployment are verified.
+
+Local verification: 19 member-service/editor/card tests and 153 generated pages. The new source was saved in Apps Script and `authorizeMemberEmail` returned 100 remaining recipients, but the deployment is still version 1. A final preservation fix to keep untouched source whitespace and literal text is local-only and must be synced before deployment. Browser control repeatedly reported user/app changes while opening Edit in Manage deployments; resume there after Chrome is available. Frontend has not been published.

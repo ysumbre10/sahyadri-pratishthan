@@ -21,7 +21,7 @@ test('lookup is required; fetched details are used; photos never enter network p
  s.get('id-photo').files=[{type:'image/png',size:11*1024*1024}];await s.get('id-photo').change();assert.equal(s.get('id-status').textContent,'invalid');
  s.get('id-photo').files=[{type:'image/jpeg',size:100}];await s.get('id-photo').change();assert.equal(s.get('id-crop').disabled,false);assert(s.texts.includes('23.04.1995'));assert(s.texts.includes('सभासद क्रमांक : 5001'));
  await s.form.submit(event);assert.deepEqual(s.downloads,['Sahyadri-Pratishthan-ID.png']);assert.equal(s.get('id-status').textContent,'done');
- assert.equal(s.requests.length,1);assert.deepEqual(JSON.parse(s.requests[0].opts.body),{phone:'9876543210',dob:'1995-04-23'});assert.equal(s.requests[0].opts.method,'POST');
+ assert.equal(s.requests.length,1);assert.deepEqual(JSON.parse(s.requests[0].opts.body),{action:'contactLookup',contact:'9876543210'});assert.equal(s.requests[0].opts.method,'POST');
  s.form.resetEvent();assert.equal(s.get('id-photo').disabled,true);assert.equal(s.get('id-download').disabled,true);
 });
 test('review and stale lookup results cannot enable downloads',async()=>{const blocked=setup({ok:false,code:'review'});await settle();await blocked.lookup.submit(event);assert.equal(blocked.get('lookup-status').textContent,'review');assert.equal(blocked.get('id-photo').disabled,true);const s=setup('pending');await settle();const request=s.lookup.submit(event);await settle();s.lookup.input();s.resolve();await request;assert.equal(s.get('id-photo').disabled,true);assert.equal(s.get('id-download').disabled,true);});

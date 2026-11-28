@@ -1,4 +1,4 @@
-/* All member data is memory-only. Never upload photos or persist form data. */
+/* Card photos remain memory-only. Verified profile edits use the separate member editor. */
 (()=>{
  const form=document.getElementById('id-form');if(!form)return;
  const t=JSON.parse(document.getElementById('id-messages').textContent);
@@ -50,25 +50,26 @@
    el('zoom').value='1';el('x').value=el('y').value='50';el('crop').disabled=false;status(t.lookup.found);el('download').disabled=!ready;render();
   }catch{if(token===generation){el('photo').value='';status(t.invalid);}}finally{URL.revokeObjectURL(url);}
  });
- function clearMember(){generation++;photo=null;member=null;el('photo').value='';el('photo').disabled=true;el('crop').disabled=true;el('download').disabled=true;el('member-details').hidden=true;['name','number','dob','blood','phone'].forEach(k=>el(k).value='');render();}
+ function clearMember(){window.memberEditor?.clear();generation++;photo=null;member=null;el('photo').value='';el('photo').disabled=true;el('crop').disabled=true;el('download').disabled=true;el('member-details').hidden=true;['name','number','dob','blood','phone'].forEach(k=>el(k).value='');render();}
  form.addEventListener('reset',()=>{lookupVersion++;lookupController?.abort();clearMember();lookupForm.reset();lookupStatus.textContent='';status('');});
- const todayISO=el('dob').max;document.getElementById('lookup-dob').max=todayISO;
+ function showMember(m){member=Object.freeze({...m});['name','number','dob','phone','blood'].forEach(k=>el(k).value=member[k]);el('member-details').hidden=false;el('photo').disabled=!m.dob||!m.name||!m.phone;render();}
+ if(window.memberEditor)window.memberEditor.onSaved=m=>{showMember(m);status(t.photoRequired);};
  lookupForm.addEventListener('input',()=>{lookupVersion++;lookupController?.abort();clearMember();lookupStatus.textContent='';});
  lookupForm.addEventListener('submit',async event=>{
   event.preventDefault();if(!lookupForm.reportValidity())return;const version=++lookupVersion;lookupController?.abort();clearMember();
   if(!/^https:\/\/script\.google\.com\/macros\/s\/[^/]+\/exec$/.test(t.endpoint)){lookupStatus.textContent=t.lookup.unavailable;return;}
-  const payload={phone:document.getElementById('lookup-phone').value,dob:document.getElementById('lookup-dob').value};
+  const payload={action:'contactLookup',contact:document.getElementById('lookup-phone').value.trim()};
   lookupStatus.textContent=t.lookup.searching;lookupController=new AbortController();const timer=setTimeout(()=>lookupController.abort(),25000);
   try{const response=await fetch(t.endpoint,{method:'POST',headers:{'Content-Type':'text/plain;charset=UTF-8'},body:JSON.stringify(payload),credentials:'omit',redirect:'follow',referrerPolicy:'no-referrer',signal:lookupController.signal});
    if(!response.ok)throw Error('Lookup unavailable');const result=await response.json();if(version!==lookupVersion)return;
    if(!result.ok){lookupStatus.textContent=t.lookup[result.code]||t.lookup.unavailable;return;}
-   const m=result.member;if(!m||!['name','number','dob','phone','blood'].every(k=>typeof m[k]==='string'&&m[k].length<=150)||!/^\d{4}-\d{2}-\d{2}$/.test(m.dob))throw Error('Invalid member response');
-   member=Object.freeze({...m});['name','number','dob','phone','blood'].forEach(k=>el(k).value=member[k]);el('member-details').hidden=false;el('photo').disabled=false;lookupStatus.textContent=t.lookup.found;status(t.photoRequired);render();
+   const m=result.member;if(!m||!['name','number','dob','phone','blood'].every(k=>typeof m[k]==='string'&&m[k].length<=150)||(m.dob&&!/^\d{4}-\d{2}-\d{2}$/.test(m.dob)))throw Error('Invalid member response');
+   showMember(m);window.memberEditor?.found(payload.contact);lookupStatus.textContent=t.lookup.found;status(t.photoRequired);render();
   }catch{if(version===lookupVersion)lookupStatus.textContent=t.lookup.unavailable;}finally{clearTimeout(timer);}
  });
  form.addEventListener('submit',async event=>{
   event.preventDefault();if(!ready||exporting)return;
-  if(!member){lookupStatus.textContent=t.lookup.invalid;return;}
+  if(!member||!member.dob||!member.name||!member.phone){lookupStatus.textContent=t.lookup.invalid;return;}
   if(!form.reportValidity())return;if(!photo){status(t.photoRequired);el('photo').focus();return;}
   exporting=true;el('download').disabled=true;
   try{render();const blob=await new Promise(resolve=>canvas.toBlob(resolve,'image/png'));if(!blob)throw new Error('Empty image');
