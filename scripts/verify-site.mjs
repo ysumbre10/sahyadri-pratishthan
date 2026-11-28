@@ -104,4 +104,18 @@ for(const lang of Object.keys(content)){
   assert.equal((page.match(/data-photo-dialog/g)||[]).length,1,'One gallery dialog per category');
  }
 }
-console.log('Verified all eight work categories, event records and galleries.');
+console.log(`Verified all ${workCategories.length} work categories, event records and galleries.`);
+
+assert.equal(new Set(workCategories.map(c=>c.id)).size,workCategories.length,'Unique category routes');
+for(const category of workCategories){
+ const events=categoryEvents(category);
+ assert.equal(new Set(events.map(e=>e.key)).size,events.length,'No duplicate records within category');
+ for(const event of events)if(event.sourceUrl){
+  assert.equal(new URL(event.sourceUrl).protocol,'https:','Public evidence URL');
+  for(const lang of Object.keys(content)){
+   const html=routes.get(urlFor(lang,'work/'+category.id));
+   assert(html.includes(event.sourceUrl),'Visible public source link');
+   if(event.recordType)assert(html.includes('work-record-type'),'Proposal/announcement clearly labelled');
+  }
+ }
+}

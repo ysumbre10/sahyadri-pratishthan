@@ -1,6 +1,6 @@
 # Sahyadri Pratishthan
 
-A static, multilingual, multipage website with Marathi at `/`, Hindi at `/hi/`, and English at `/en/`. Thirty-nine pages per language, 117 public pages total, including eight Work categories, complete photo collections, 12 fort profiles and conservation guides.
+A static, multilingual, multipage website with Marathi at `/`, Hindi at `/hi/`, and English at `/en/`. Fifty-one pages per language, 153 public pages total, including 20 Work categories, complete photo collections, 12 fort profiles and conservation guides.
 
 ## Run locally
 
@@ -161,6 +161,10 @@ Monitor Search Console's Page indexing and Performance reports for branded queri
 
 ## Work categories and event records
 
-`work-categories.mjs` defines the eight categories and maps each to original archive records. Add a verified event (translated title/body, date where known, and image references) to `archive-catalog.json`, then reference its collection/ID in the category. Publish only media the NGO intends to share. Never copy the complete Instagram export into `assets/` or the repository: it can include archived or private content.
+`work-categories.mjs` and `work-category-additions.mjs` define the categories and maps each to original archive records. Add a verified event (translated title/body, date where known, and image references) to `archive-catalog.json`, then reference its collection/ID in the category. Publish only media the NGO intends to share. Never copy the complete Instagram export into `assets/` or the repository: it can include archived or private content.
 
 The Work landing page shows up to six relevant photographs per category. Each category route shows up to three photographs per record, with remaining images behind an expandable gallery. Categories with no supplied evidence are visibly awaiting records, rather than populated with unrelated photos. Original albums remain at `work/collections/`; old Work-page anchors point visitors to those collections.
+
+### Additional work evidence
+
+The additional categories connect temple care, tanks, paths, memorials, history programmes, Shivrath Yatra, flags, environment, youth camps, community care, cultural events and research to supplied archive records. `publicWorkRecords` retains primary-source links for the Kenjaldevi temple visit (2 August 2025) and the 2016 blog proposals/announcements. No third-party photographs were copied. The website labels plans as plans, not completed work. Reviewed 28 November 2026.
