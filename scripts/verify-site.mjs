@@ -3,6 +3,7 @@ import {readFile,readdir,access} from 'node:fs/promises';
 import {resolve} from 'node:path';
 import {content,officialTagline} from '../content.mjs';
 import {pageDefinitions,urlFor} from '../pages.mjs';
+import {workCategories,categoryEvents} from '../work-categories.mjs';
 import {documents} from '../documents.mjs';
 const projects=JSON.parse(await readFile(new URL('../projects-manifest.json',import.meta.url),'utf8'));
 const photoCount=projects.reduce((total,project)=>total+project.images.length,0);
@@ -39,7 +40,7 @@ for(const lang of Object.keys(content))for(const {slug} of pageDefinitions){
   assert.equal((html.match(/class="social-crest"/g)||[]).length,4,`${route}: official social emblems`);
   assert(!html.includes('<iframe'),`${route}: videos load only on interaction`);
  }
- if(slug==='work'){
+ if(slug==='work/collections'){
   assert.equal((html.match(/data-project-chapter/g)||[]).length,projects.length,`${route}: all project collections`);
   assert.equal((html.match(/data-photo data-caption/g)||[]).length,photoCount,`${route}: all unique photographs`);
  }
@@ -93,3 +94,14 @@ assert.equal(favicon.readUInt32BE(16),96);assert.equal(favicon.readUInt32BE(20),
 const manifest=JSON.parse(await read('site.webmanifest'));
 for(const icon of manifest.icons)await access(new URL(icon.src.slice(1),root));
 console.log('Verified square Google-compatible favicon and app icons.');
+
+for(const lang of Object.keys(content)){
+ const directory=routes.get(urlFor(lang,'work'));
+ for(const category of workCategories){
+  assert(directory.includes(`href="${urlFor(lang,'work/'+category.id)}"`),'Work category linked');
+  const page=routes.get(urlFor(lang,'work/'+category.id));
+  for(const event of categoryEvents(category))assert(page.includes(`id="${event.key}"`),'Every category record published');
+  assert.equal((page.match(/data-photo-dialog/g)||[]).length,1,'One gallery dialog per category');
+ }
+}
+console.log('Verified all eight work categories, event records and galleries.');

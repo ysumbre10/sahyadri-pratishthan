@@ -1,6 +1,6 @@
 # Sahyadri Pratishthan
 
-A static, multilingual, multipage website with Marathi at `/`, Hindi at `/hi/`, and English at `/en/`. Thirty pages per language, 90 public pages total, including 12 documented fort profiles, a fort directory and two conservation guides.
+A static, multilingual, multipage website with Marathi at `/`, Hindi at `/hi/`, and English at `/en/`. Thirty-nine pages per language, 117 public pages total, including eight Work categories, complete photo collections, 12 fort profiles and conservation guides.
 
 ## Run locally
 
@@ -158,3 +158,9 @@ Monitor Search Console's Page indexing and Performance reports for branded queri
 ## Fort discovery and search visibility
 
 `fort-pages.mjs` groups documented photographs and archive records by fort. `conservation-guides.mjs` contains the fort cleaning and Swarajya heritage guides in all three languages. Add future pages with source-backed work, not keyword-only location pages. `assets/icons/` contains compact PNG/ICO versions of the supplied brand logo. See [Search visibility](docs/search-visibility.md) for Search Console follow-up and editorial guidance.
+
+## Work categories and event records
+
+`work-categories.mjs` defines the eight categories and maps each to original archive records. Add a verified event (translated title/body, date where known, and image references) to `archive-catalog.json`, then reference its collection/ID in the category. Publish only media the NGO intends to share. Never copy the complete Instagram export into `assets/` or the repository: it can include archived or private content.
+
+The Work landing page shows up to six relevant photographs per category. Each category route shows up to three photographs per record, with remaining images behind an expandable gallery. Categories with no supplied evidence are visibly awaiting records, rather than populated with unrelated photos. Original albums remain at `work/collections/`; old Work-page anchors point visitors to those collections.

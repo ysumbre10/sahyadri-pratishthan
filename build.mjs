@@ -12,7 +12,7 @@ await rm(new URL('__letter-preview-phone/',out),{recursive:true,force:true});
 await rm(new URL('assets/',out),{recursive:true,force:true});
 await mkdir(new URL('assets/',out),{recursive:true});
 for(const name of ['icons','id-card-template-v2.png','raigad.webp','lohagad.webp','film.webp','sp_logo_reg_no.webp','document-pages','projects','heritage','presentation','archive']) await cp(new URL(`assets/${name}`,import.meta.url),new URL(`assets/${name}`,out),{recursive:true});
-for(const file of ['styles.css','archive.css','founder.css','app.js','projects.css','projects.js','heritage.css','media.js','registration.css','id-card.js']) await cp(new URL(file,import.meta.url),new URL(file,out));
+for(const file of ['work-categories.css','work-categories.js','styles.css','archive.css','founder.css','app.js','projects.css','projects.js','heritage.css','media.js','registration.css','id-card.js']) await cp(new URL(file,import.meta.url),new URL(file,out));
 // Unlisted, encrypted letter editor: never add this route to navigation or sitemap.
 await rm(new URL('patra-kaksha/',out),{recursive:true,force:true});
 await mkdir(new URL('patra-kaksha/',out),{recursive:true});

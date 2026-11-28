@@ -1,3 +1,4 @@
+import {workCategoryDefinitions,workCategoryText} from './work-categories.mjs';
 import {fortPageDefinitions,fortPageText} from './fort-pages.mjs';
 import {guideDefinitions,guidePageText} from './conservation-guides.mjs';
 import {readFileSync} from 'node:fs';
@@ -7,7 +8,8 @@ const catalog=JSON.parse(readFileSync(new URL('./archive-catalog.json',import.me
 export const pageDefinitions=[
  {slug:'',sections:['heritageHero','inspiration','fieldStories','featuredProjects','research','videoJournal','fortCare','join','historicSocials']},
  {slug:'about',sections:['founderFeature','about','movementJourney','inspiration','fortCare','videoJournal','historicSocials']},
- {slug:'work',sections:['workArchiveDirectory','projectShowcase','join','historicSocials']},
+ {slug:'work',sections:['workDirectory','join','historicSocials']},
+ {slug:'work/collections',sections:['projectShowcase']},
  {slug:'stories',sections:['activityArchiveDirectory','stories','videoJournal','historicSocials']},
  {slug:'founder',sections:['founderHero','founderJourney','founderDetailedWork','founderRecords','founderCommunity','founderClosing']},
  {slug:'journey',sections:['archiveDirectory','journeyArchive','founderRecords','founderClosing']},
@@ -48,6 +50,7 @@ export const pageText={
  }
 };
 for(const group of catalog){pageDefinitions.push({slug:'archive/'+group.id,sections:['archive_'+group.id]});for(const lang of ['mr','hi','en'])pageText[lang]['archive/'+group.id]=[group.title[lang],group.intro[lang]];}
-pageDefinitions.push(...guideDefinitions,...fortPageDefinitions);
-for(const lang of ['mr','hi','en'])Object.assign(pageText[lang],guidePageText[lang],fortPageText[lang]);
+pageDefinitions.push(...guideDefinitions,...fortPageDefinitions,...workCategoryDefinitions);
+for(const lang of ['mr','hi','en'])Object.assign(pageText[lang],guidePageText[lang],fortPageText[lang],workCategoryText[lang]);
+for(const lang of ['mr','hi','en'])pageText[lang]['work/collections']={mr:['संपूर्ण छायाचित्र संग्रह','सह्याद्री प्रतिष्ठानच्या मूळ कार्यसंग्रहातील सर्व छायाचित्रे पाहा. गड-किल्ले, स्मारके आणि सामूहिक दुर्गसेवेचे क्षण.'],hi:['पूरा फोटो संग्रह','सह्याद्री प्रतिष्ठान के मूल कार्य संग्रह की सभी तस्वीरें देखें। किले, स्मारक और सामूहिक दुर्गसेवा के क्षण।'],en:['Complete project photograph collections','Browse the complete original project photo collections from Sahyadri Pratishthan: forts, memorials and moments of collective conservation work.']}[lang];
 export function pageIntro(lang,slug){const text=pageText[lang];const [title,description]=text[slug];return `<section class="page-intro"><div class="container"><nav class="breadcrumbs" aria-label="${text.home}"><a href="${urlFor(lang)}">${text.home}</a><span aria-hidden="true">/</span><span aria-current="page">${title}</span></nav><h1>${title}</h1><p>${description}</p></div></section>`;}

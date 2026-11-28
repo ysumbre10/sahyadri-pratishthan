@@ -1,3 +1,4 @@
+import {workCategories,workDirectory,workCategoryPage} from './work-categories.mjs';
 import {forts,renderFortDirectory,renderFortPage} from './fort-pages.mjs';
 import {guideDefinitions,renderGuide} from './conservation-guides.mjs';
 import {archiveCatalog,archiveCollection,archiveDirectory,founderDetailedWork} from './archive.mjs';
@@ -7,7 +8,7 @@ import {idCardSection} from './id-card.mjs';
 import {registrationSection,registrationLink,registrationChoices} from './registration.mjs';
 import {heritageHero,inspiration,fieldStories,research,fortCare} from './heritage.mjs';
 import {historicSocials,videoJournal} from './media.mjs';
-import {featuredProjects,projectShowcase} from './projects.mjs';
+import {featuredProjects,projectShowcase,projectLightbox} from './projects.mjs';
 import {links,sources} from './content.mjs';
 import {documentSection} from './documents.mjs';
 const ext='target="_blank" rel="noopener noreferrer"';
@@ -16,6 +17,8 @@ const icons=[`<path d="M3 21V7h4v4h4V7h4v4h4V7h3v14M3 17h19M10 21v-4h5v4M12 7V2l
 const icon=i=>`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${icons[i]}</svg>`;
 
 export function sections(lang,t){return {
+ workDirectory:()=>workDirectory(lang)+projectLightbox(lang),
+ ...Object.fromEntries(workCategories.map(c=>['workCategory_'+c.id,()=>workCategoryPage(lang,c.id)+projectLightbox(lang)])),
  fortDirectory:()=>renderFortDirectory(lang),
  ...Object.fromEntries(forts.map(f=>['fort_'+f.id,()=>renderFortPage(lang,f.id)])),
  ...Object.fromEntries(guideDefinitions.map(({slug})=>['guide_'+slug,()=>renderGuide(lang,slug)])),
