@@ -119,3 +119,16 @@ for(const category of workCategories){
   }
  }
 }
+
+const instagram=JSON.parse(await readFile(new URL('../instagram-records.json',import.meta.url)));
+const instagramImages=JSON.parse(await readFile(new URL('../instagram-images.json',import.meta.url)));
+assert.equal(new Set(instagram.map(r=>r.id)).size,instagram.length,'Unique Instagram accounts');
+for(const r of instagram){
+ assert(r.photos.length>=1&&r.photos.length<=3,'One to three selected images per imported account');
+ assert(r.categories.every(c=>workCategories.some(w=>w.id===c)),'Every imported subject has a route');
+ assert(r.caption&&!/[Ãð][\x80-\xBF]/.test(r.caption),'Captions decoded');
+ for(const p of r.photos){const image=instagramImages[p];assert(image&&image.src.endsWith('.webp')&&image.thumb.endsWith('.webp'),'WebP image pair');await access(new URL(image.src.slice(1),root));await access(new URL(image.thumb.slice(1),root));}
+}
+for(const category of workCategories){assert(categoryEvents(category).some(e=>e.photos.length),'Every work category has a photograph');}
+assert(!(await readdir(root)).includes('output'),'Private extraction is excluded');
+console.log(`Verified ${instagram.length} Instagram accounts with ${Object.keys(instagramImages).length} optimized photographs.`);

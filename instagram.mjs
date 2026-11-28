@@ -1,0 +1,10 @@
+import {readFileSync} from 'node:fs';
+export const instagramRecords=JSON.parse(readFileSync(new URL('./instagram-records.json',import.meta.url)));
+export const instagramImages=JSON.parse(readFileSync(new URL('./instagram-images.json',import.meta.url)));
+const places=[['राजगड','Rajgad'],['रायगड','Raigad'],['प्रतापगड','Pratapgad'],['सिंहगड','Sinhagad'],['भोरगिरी','Bhorgiri'],['मोरगिरी','Morgiri'],['भुषणगड','Bhushangad'],['भूषणगड','Bhushangad'],['केंजळगड','Kenjalgad'],['केंजलगड','Kenjalgad'],['तुंग','Tung'],['तिकोना','Tikona'],['विसापूर','Visapur'],['लोहगड','Lohagad'],['कंक्राळा','Kankrala'],['रामदरने','Ramdarne'],['जंजिरा','Janjira'],['पद्मदुर्ग','Padmadurg'],['वसंतगड','Vasantgad'],['सज्जनगड','Sajjangad'],['पुरंदर','Purandar'],['मलंगगड','Malanggad'],['धर्मवीरगड','Dharmaveergad'],['बहादूरगड','Bahadurgad'],['रोहिडा','Rohida'],['रोहिडेश्वर','Rohideshwar'],['रायरेश्वर','Raireshwar'],['राजमाची','Rajmachi'],['सुधागड','Sudhagad'],['सरसगड','Sarasgad'],['कोरीगड','Korigad'],['तोरणा','Torna'],['शिवनेरी','Shivneri'],['पन्हाळा','Panhala'],['विशाळगड','Vishalgad'],['विशालगड','Vishalgad'],['मोहणगड','Mohangad'],['मोहनगड','Mohangad'],['अलिबाग','Alibag'],['शिरूर','Shirur'],['शिरुर','Shirur'],['पेण','Pen'],['सातारा','Satara'],['खेड','Khed'],['पुणे','Pune'],['नाशिक','Nashik']];
+export function instagramEvent(record,category){
+ const place=places.find(([mr])=>record.caption.includes(mr));
+ const title=Object.fromEntries(['mr','hi','en'].map((lang,i)=>[lang,category.names[i]+(place?' · '+place[lang==='en'?1:0]:'')]));
+ const excerpt=record.caption.length>420?record.caption.slice(0,420).replace(/\s+\S*$/,'')+'…':record.caption;
+ return {...record,title,body:{mr:excerpt,hi:'संस्था के आधिकारिक इंस्टाग्राम संग्रह से इस कार्य का विवरण। गतिविधियों और आयोजन का मूल मराठी विवरण नीचे पढ़ें।',en:'An account from the organisation’s official Instagram archive. Read the original Marathi caption below for the activities and context.'},sourceName:'Sahyadri Pratishthan · Instagram',sourceUrl:'https://www.instagram.com/sahyadri_pratishthan_official/',instagram:true};
+}

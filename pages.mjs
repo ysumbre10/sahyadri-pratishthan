@@ -6,7 +6,7 @@ const catalog=JSON.parse(readFileSync(new URL('./archive-catalog.json',import.me
 // Add a page here, supply translated metadata, and compose its section names.
 // The builder generates the route in all three languages automatically.
 export const pageDefinitions=[
- {slug:'',sections:['heritageHero','inspiration','fieldStories','featuredProjects','research','videoJournal','fortCare','join','historicSocials']},
+ {slug:'',sections:['heritageHero','inspiration','fieldStories','workHighlights','featuredProjects','research','videoJournal','fortCare','join','historicSocials']},
  {slug:'about',sections:['founderFeature','about','movementJourney','inspiration','fortCare','videoJournal','historicSocials']},
  {slug:'work',sections:['workDirectory','join','historicSocials']},
  {slug:'work/collections',sections:['projectShowcase']},
