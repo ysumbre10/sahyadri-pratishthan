@@ -10,7 +10,6 @@ export const pageDefinitions=[
  {slug:'about',sections:['founderFeature','about','movementJourney','inspiration','fortCare','videoJournal','historicSocials']},
  {slug:'work',sections:['workDirectory','join','historicSocials']},
  {slug:'work/collections',sections:['projectShowcase']},
- {slug:'stories',sections:['activityArchiveDirectory','stories','videoJournal','historicSocials']},
  {slug:'founder',sections:['founderHero','founderJourney','founderDetailedWork','founderRecords','founderCommunity','founderClosing']},
  {slug:'journey',sections:['archiveDirectory','journeyArchive','founderRecords','founderClosing']},
  {slug:'documents',sections:['documents','historicSocials']},
@@ -24,7 +23,6 @@ export const pageText={
   journey:['दुर्गसेवेचा कार्यप्रवास','सह्याद्री प्रतिष्ठानचा दुर्गसंवर्धन, जनजागृती आणि समाजसेवेचा प्रवास पाहा. संस्थेच्या संग्रहातील मोहिमा, छायाचित्रे आणि कार्याच्या नोंदी वाचा.'],
   about:['दुर्गसंवर्धनाची आमची चळवळ','महाराष्ट्रातील गड-किल्ल्यांचे जतन करणाऱ्या सह्याद्री प्रतिष्ठानची ओळख. दुर्गसेवकांचे श्रमदान, इतिहासाचा जागर आणि संस्थेचा कार्यप्रवास जाणून घ्या.'],
   work:['गड-किल्ल्यांवरील संवर्धन कार्य','सह्याद्री प्रतिष्ठानच्या गड-किल्ल्यांवरील दुर्गसंवर्धन मोहिमा पाहा. महादरवाजे, तोफा, पाण्याच्या टाक्या आणि श्रमदानाच्या कार्याचे छायाचित्र संग्रह.'],
-  stories:['दुर्गसंवर्धन मोहिमांच्या नोंदी','सह्याद्री प्रतिष्ठानच्या गड-किल्ल्यांवरील उपक्रम, अभ्यासभेटी आणि मोहिमांच्या प्रकाशित नोंदी वाचा. मूळ वृत्तस्रोत आणि कार्याच्या संग्रहाशी जोडले जा.'],
   documents:['अधिकृत कागदपत्रे','सह्याद्री प्रतिष्ठानची नोंदणी प्रमाणपत्रे आणि अधिकृत कागदपत्रे येथे वाचा. संस्थेच्या उपलब्ध मूळ नोंदींच्या प्रतिमा एकाच ठिकाणी पाहा.'],
   join:['दुर्गसंवर्धनात सहभागी व्हा','सह्याद्री प्रतिष्ठानच्या दुर्गसंवर्धन कार्यात सहभागी व्हा. सभासद नोंदणी, मोहिमांची माहिती आणि स्वयंसेवक म्हणून आपला वेळ व कौशल्य देण्याचे मार्ग जाणून घ्या.']
  },
@@ -34,7 +32,6 @@ export const pageText={
   journey:['दुर्गसेवा की यात्रा','सह्याद्री प्रतिष्ठान की दुर्ग संरक्षण, जनजागृति और समाजसेवा की यात्रा देखें। संस्था के संग्रह से अभियानों, तस्वीरों और कार्य के विवरण पढ़ें।'],
   about:['दुर्ग संरक्षण का हमारा अभियान','महाराष्ट्र के किलों की विरासत सँजोने वाले सह्याद्री प्रतिष्ठान को जानें। दुर्गसेवकों के श्रमदान, इतिहास के प्रति जागरूकता और संस्था की यात्रा के बारे में पढ़ें।'],
   work:['किलों पर संरक्षण कार्य','सह्याद्री प्रतिष्ठान के दुर्ग संरक्षण अभियानों को तस्वीरों में देखें। स्वराज्य के प्रवेशद्वार, तोपें, जलकुंड और स्वयंसेवकों के श्रमदान के संग्रह।'],
-  stories:['दुर्ग संरक्षण अभियानों के विवरण','सह्याद्री प्रतिष्ठान के किलों पर हुए कार्यक्रमों, अध्ययन यात्राओं और अभियानों की प्रकाशित रिपोर्ट पढ़ें। मूल समाचार स्रोत और कार्य के संग्रह देखें।'],
   documents:['आधिकारिक दस्तावेज़','सह्याद्री प्रतिष्ठान के पंजीकरण प्रमाणपत्र और आधिकारिक दस्तावेज़ यहाँ पढ़ें। संस्था के उपलब्ध मूल अभिलेखों की छवियाँ एक ही स्थान पर देखें।'],
   join:['दुर्ग संरक्षण से जुड़ें','सह्याद्री प्रतिष्ठान के दुर्ग संरक्षण कार्य में भाग लें। सदस्य पंजीकरण, अभियानों की जानकारी और स्वयंसेवक के रूप में अपना समय व कौशल देने के तरीके जानें।']
  },
@@ -44,7 +41,6 @@ export const pageText={
   journey:['Our fort conservation journey','Trace Sahyadri Pratishthan’s fort conservation, education and community service through campaign records and photographs from the organisation’s archive.'],
   about:['Our fort conservation movement','Meet Sahyadri Pratishthan, a volunteer movement caring for Maharashtra’s forts through conservation, clean-ups and heritage awareness. Explore our journey.'],
   work:['Fort conservation projects','See Sahyadri Pratishthan’s conservation work at Maharashtra’s forts: gateways, cannons, water tanks and volunteer campaigns, documented in photographs.'],
-  stories:['Fort conservation field notes','Read published accounts of Sahyadri Pratishthan’s fort conservation campaigns, study visits and programmes, with links to original news reports.'],
   documents:['Official documents','Read Sahyadri Pratishthan’s registration certificates and official documents. View images of the organisation’s available original records in one place.'],
   join:['Volunteer for fort conservation','Join Sahyadri Pratishthan’s fort conservation movement. Find membership registration, campaign information and ways to volunteer your time and skills.']
  }

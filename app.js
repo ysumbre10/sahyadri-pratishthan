@@ -2,7 +2,7 @@
 const oldSection=location.hash.slice(1);
 if(['about','work','stories','documents','join'].includes(oldSection)&&!document.getElementById(oldSection)){
  const prefix=/^\/(hi|en)(?:\/|$)/.exec(location.pathname)?.[1];
- location.replace(`${prefix?'/'+prefix:''}/${oldSection}/`);
+ location.replace(`${prefix?'/'+prefix:''}/${oldSection==='stories'?'work':oldSection}/`);
 }
 const menu=document.querySelector('.menu-toggle');
 const nav=document.querySelector('#navigation');

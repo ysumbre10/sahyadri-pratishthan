@@ -26,12 +26,18 @@ for(const [lang,t] of Object.entries(content)){
   const pageDescription=slug?pageText[lang][slug][1]:t.description;
   const body=(slug&&slug!=='founder'?pageIntro(lang,slug):'')+page.sections.map(key=>fragments[key]()).join('\n');
   let html=layout({lang,t,slug,pageTitle,pageDescription,body});
-  for(const target of ['about','work','stories','documents','join']) html=html.replaceAll(`href="#${target}"`,`href="${urlFor(lang,target)}"`);
-  // Films remain part of home, about and stories; link elsewhere to the home film.
+  for(const target of ['about','work','documents','join']) html=html.replaceAll(`href="#${target}"`,`href="${urlFor(lang,target)}"`);
+  // Films remain part of home and about; link elsewhere to the home film.
   if(!page.sections.includes('film')&&!page.sections.includes('videoJournal'))html=html.replaceAll('href="#film"',`href="${urlFor(lang)}#film"`);
   if(slug){const navEnd=html.indexOf('</nav>');const navStart=html.lastIndexOf('<nav',navEnd);const nav=html.slice(navStart,navEnd).replace(`href="${urlFor(lang,slug)}"`,`href="${urlFor(lang,slug)}" aria-current="page"`);html=html.slice(0,navStart)+nav+html.slice(navEnd);}
   const dir=new URL(urlFor(lang,slug).slice(1),out);await mkdir(dir,{recursive:true});await writeFile(new URL('index.html',dir),html);urls.push(urlFor(lang,slug));
  }
+}
+// Old bookmarks continue to the consolidated work directory.
+for(const lang of Object.keys(content)){
+ const target=urlFor(lang,'work'),dir=new URL(urlFor(lang,'stories').slice(1),out);
+ await mkdir(dir,{recursive:true});
+ await writeFile(new URL('index.html',dir),`<!doctype html><html lang="${lang}"><head><meta charset="UTF-8"><meta name="robots" content="noindex"><meta http-equiv="refresh" content="0;url=${target}"><link rel="canonical" href="https://sahyadripratishthan.com${target}"><title>${content[lang].nav[1]}</title></head><body><a href="${target}">${content[lang].nav[1]}</a></body></html>`);
 }
 await writeFile(new URL('robots.txt',out),'User-agent: *\nAllow: /\nSitemap: https://sahyadripratishthan.com/sitemap.xml\n');
 await writeFile(new URL('sitemap.xml',out),sitemapXml());
