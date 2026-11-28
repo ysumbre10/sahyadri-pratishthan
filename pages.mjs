@@ -1,3 +1,5 @@
+import {fortPageDefinitions,fortPageText} from './fort-pages.mjs';
+import {guideDefinitions,guidePageText} from './conservation-guides.mjs';
 import {readFileSync} from 'node:fs';
 const catalog=JSON.parse(readFileSync(new URL('./archive-catalog.json',import.meta.url),'utf8'));
 // Add a page here, supply translated metadata, and compose its section names.
@@ -46,4 +48,6 @@ export const pageText={
  }
 };
 for(const group of catalog){pageDefinitions.push({slug:'archive/'+group.id,sections:['archive_'+group.id]});for(const lang of ['mr','hi','en'])pageText[lang]['archive/'+group.id]=[group.title[lang],group.intro[lang]];}
+pageDefinitions.push(...guideDefinitions,...fortPageDefinitions);
+for(const lang of ['mr','hi','en'])Object.assign(pageText[lang],guidePageText[lang],fortPageText[lang]);
 export function pageIntro(lang,slug){const text=pageText[lang];const [title,description]=text[slug];return `<section class="page-intro"><div class="container"><nav class="breadcrumbs" aria-label="${text.home}"><a href="${urlFor(lang)}">${text.home}</a><span aria-hidden="true">/</span><span aria-current="page">${title}</span></nav><h1>${title}</h1><p>${description}</p></div></section>`;}

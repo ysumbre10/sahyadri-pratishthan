@@ -11,7 +11,7 @@ await rm(new URL('__letter-preview-phone/',out),{recursive:true,force:true});
 // Only explicitly selected public assets enter the deployable site.
 await rm(new URL('assets/',out),{recursive:true,force:true});
 await mkdir(new URL('assets/',out),{recursive:true});
-for(const name of ['id-card-template-v2.png','raigad.webp','lohagad.webp','film.webp','sp_logo_reg_no.webp','document-pages','projects','heritage','presentation','archive']) await cp(new URL(`assets/${name}`,import.meta.url),new URL(`assets/${name}`,out),{recursive:true});
+for(const name of ['icons','id-card-template-v2.png','raigad.webp','lohagad.webp','film.webp','sp_logo_reg_no.webp','document-pages','projects','heritage','presentation','archive']) await cp(new URL(`assets/${name}`,import.meta.url),new URL(`assets/${name}`,out),{recursive:true});
 for(const file of ['styles.css','archive.css','founder.css','app.js','projects.css','projects.js','heritage.css','media.js','registration.css','id-card.js']) await cp(new URL(file,import.meta.url),new URL(file,out));
 // Unlisted, encrypted letter editor: never add this route to navigation or sitemap.
 await rm(new URL('patra-kaksha/',out),{recursive:true,force:true});
@@ -40,3 +40,7 @@ await cp(new URL('googlea36b97a75caa8bc6.html',import.meta.url),new URL('googlea
 await writeFile(new URL('CNAME',out),'sahyadripratishthan.com\n');
 await writeFile(new URL('.nojekyll',out),'');
 console.log(`Built ${urls.length} pages across Marathi, Hindi and English.`);
+
+await cp(new URL('assets/icons/favicon.ico',import.meta.url),new URL('favicon.ico',out));
+await cp(new URL('assets/icons/icon-96.png',import.meta.url),new URL('favicon.png',out));
+await writeFile(new URL('site.webmanifest',out),JSON.stringify({name:'Sahyadri Pratishthan',short_name:'Sahyadri',start_url:'/',display:'browser',background_color:'#fffaf1',theme_color:'#f36616',icons:[192,512].map(size=>({src:`/assets/icons/icon-${size}.png`,sizes:`${size}x${size}`,type:'image/png',purpose:'any'}))}));

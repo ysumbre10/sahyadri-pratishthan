@@ -1,6 +1,6 @@
 # Sahyadri Pratishthan
 
-A static, multilingual, multipage website with Marathi at `/`, Hindi at `/hi/`, and English at `/en/`. Fifteen pages per language, 45 public pages total.
+A static, multilingual, multipage website with Marathi at `/`, Hindi at `/hi/`, and English at `/en/`. Thirty pages per language, 90 public pages total, including 12 documented fort profiles, a fort directory and two conservation guides.
 
 ## Run locally
 
@@ -154,3 +154,7 @@ The Join page is available in Marathi, Hindi and English. It presents registrati
 Search Console ownership and sitemap submission are separate from hosting. GoDaddy manages the domain; GitHub Pages serves the site. Use the owner's chosen Google account to verify the HTTPS URL-prefix property, submit `https://sahyadripratishthan.com/sitemap.xml`, then inspect the three language homepages and request indexing. Keep the Google-provided verification file deployed after successful verification. Do not fabricate a verification token or publish one for a different account.
 
 Monitor Search Console's Page indexing and Performance reports for branded queries (Sahyadri Pratishthan / सह्याद्री प्रतिष्ठान) and fort-conservation queries. The organisation's own social profiles should link to the canonical website where appropriate. Rankings and indexing cannot be guaranteed; do not add hidden keyword lists, invented endorsements or mass-generated doorway pages. Reference: https://developers.google.com/search/docs/crawling-indexing/ask-google-to-recrawl
+
+## Fort discovery and search visibility
+
+`fort-pages.mjs` groups documented photographs and archive records by fort. `conservation-guides.mjs` contains the fort cleaning and Swarajya heritage guides in all three languages. Add future pages with source-backed work, not keyword-only location pages. `assets/icons/` contains compact PNG/ICO versions of the supplied brand logo. See [Search visibility](docs/search-visibility.md) for Search Console follow-up and editorial guidance.

@@ -17,6 +17,8 @@ for(const lang of Object.keys(content))for(const {slug} of pageDefinitions){
  assert(title&&description,`${route}: title and description present`);
  assert(!titles.has(lang+':'+title)&&!descriptions.has(description),`${route}: unique search metadata`);
  titles.add(lang+':'+title);descriptions.add(description);
+ assert(html.includes('href="/favicon.png"')&&html.includes('href="/favicon.ico"'),`${route}: PNG and ICO favicons`);
+ assert(html.includes('href="/site.webmanifest"'),`${route}: install icon manifest`);
  assert(html.includes('content="index, follow, max-image-preview:large"'),`${route}: public page indexable`);
  assert(!/noindex/i.test(html),`${route}: no accidental noindex`);
  const structured=[...html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)].map(match=>JSON.parse(match[1]));
@@ -84,3 +86,10 @@ for(const group of archive){
  }
 }
 console.log(`Verified ${archive.length} archive collections, ${archive.reduce((n,g)=>n+g.entries.length,0)} detailed accounts and ${Object.keys(archiveImages).length} source photographs.`);
+
+const favicon=await readFile(new URL('favicon.png',root));
+assert.equal(favicon.subarray(1,4).toString(),'PNG');
+assert.equal(favicon.readUInt32BE(16),96);assert.equal(favicon.readUInt32BE(20),96);
+const manifest=JSON.parse(await read('site.webmanifest'));
+for(const icon of manifest.icons)await access(new URL(icon.src.slice(1),root));
+console.log('Verified square Google-compatible favicon and app icons.');
