@@ -97,3 +97,18 @@
 }
 @media(max-width:380px){.id-fields{grid-template-columns:1fr;gap:0}.id-workspace,.id-grid #member-lookup{padding:16px}.registration-choice{padding:14px 16px}}
 .member-editor{grid-area:editor;min-width:0}.id-grid{grid-template-areas:'lookup preview' 'photo preview' 'editor editor'}.member-editor[hidden],.member-editor [hidden]{display:none!important}.member-editor>p{margin:1rem 0}.member-editor button{margin-block:.6rem;min-height:44px;padding:.6rem 1rem}.member-profile-fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 1.5rem}.member-editor input,.member-editor select{width:100%;min-height:44px;font:inherit;padding:.6rem;border:1px solid #b9a787;background:#fffaf1;color:var(--ink)}.member-editor label{display:block;margin-top:1rem}.member-email-verification,#member-review{padding:1rem;background:#f4e8d3;margin-block:1rem}#member-changes dt{font-weight:700;margin-top:1rem}#member-changes dd{margin:0;overflow-wrap:anywhere}.member-editor a{text-decoration:underline;overflow-wrap:anywhere}@media(max-width:760px){.id-grid{grid-template-areas:'lookup' 'preview' 'photo' 'editor'}.member-profile-fields{grid-template-columns:1fr}}
+
+/* Keep the card in normal flow: a sticky preview can slide over the full-width editor. */
+.id-grid .id-preview{position:static;top:auto;align-self:start}
+.member-editor{border-top:4px solid var(--join-accent);scroll-margin-top:130px}
+.member-editor>p{max-width:76ch}
+.member-permanent{display:grid;grid-template-columns:1fr auto;align-items:center;gap:6px 24px;padding:18px 22px;margin:24px 0 8px;background:#eee9df;border:1px solid #d4cbbd;border-left:4px solid #8b5b25;border-radius:5px}
+.member-permanent span{font-weight:600}
+.member-permanent strong{font-size:28px;color:#613414;overflow-wrap:anywhere}
+.member-permanent p{grid-column:1/-1;margin:0;font-size:14px;color:#615845}
+.member-profile-fields>div{min-width:0}
+.member-editor #member-code-form{max-width:400px}
+.member-editor #member-edit-status:empty{display:none}
+.member-editor #member-review{border-left:4px solid var(--join-accent);border-radius:4px}
+.member-editor #member-review button{margin-right:12px}
+@media(max-width:480px){.member-permanent{grid-template-columns:1fr;padding:16px}.member-editor button{max-width:100%;white-space:normal}}
